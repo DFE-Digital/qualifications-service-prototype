@@ -1,3 +1,7 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+// 
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 $govuk-new-link-styles: true;
@@ -16,16 +20,6 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 @import "patterns/panel";
 @import "patterns/button";
-@import "patterns/masthead";
+@import "govuk-page-masthead";
 
-// Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-.secondary-button {
-    margin: 0 0 0 .5em;
-}
-#bannerBar {
-    background-color: #F3F2F1;
-    padding: 0 0 0 0.5em;  
-}
-.govuk-notification-banner--success {
-    margin: 1em 0 0 0;
-}
+// Add extra styles here
