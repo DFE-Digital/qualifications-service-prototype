@@ -1,0 +1,193 @@
+{% extends "layouts/forms.html" %}
+{% set title = 'Your qualifications' %}
+{% set signedIn = 'true' %}
+{% set hideButton  = 'true' %}
+{% set activeTabQual  = 'true' %}
+{% set page  = 'qualification' %}
+
+
+
+{% block form %}
+
+{% include 'includes/tabs.html' %}
+
+<!-- NPQ -->
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "National Professional Qualification (NPQ) for executive leadership"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Result"
+      },
+      value: {
+        text: "Attained NPQ status"
+      }
+    },
+    {
+      key: {
+        text: "Completion date"
+      },
+      value: {
+        text: "1 June 2022"
+      }
+    },
+    {
+      key: {
+        text: "Certificate"
+      },
+      value: {
+        html: "NPQ exective leadership certificate"
+      },
+      actions: {
+        items: [
+          {
+            html: '<a class="govuk-link" download href="/public/images/NPQ exective leadership certificate.pdf">Download PDF</a>'
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+
+<!-- NPQ -->
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "National Professional Qualification (NPQ) for headteacher"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Result"
+      },
+      value: {
+        text: "Attained NPQ status"
+      }
+    },
+    {
+      key: {
+        text: "Completion date"
+      },
+      value: {
+        text: "1 June 2022"
+      }
+    },
+    {
+      key: {
+        text: "Certificate"
+      },
+      value: {
+        html: "NPQ exective leadership certificate"
+      },
+      actions: {
+        items: [
+          {
+            html: '<a class="govuk-link" download href="/public/images/NPQ headteacher certificate.pdf">Download PDF</a>'          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+
+
+<!-- Qualified teacher status (QTS) -->
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Qualified teacher status (QTS)"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Result"
+      },
+      value: {
+        text: "Attained QTS status"
+      }
+    },
+    {
+      key: {
+        text: "Completion date"
+      },
+      value: {
+        text: "1 September 2014"
+      }
+    },
+    {
+      key: {
+        text: "Certificate"
+      },
+      value: {
+        html: "Qualified teacher status certificate	"
+      },
+      actions: {
+        items: [
+          {
+            html: '<a class="govuk-link" download href="/public/images/Qualified teacher status certificate.pdf">Download PDF</a>'
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+<!-- Initial teacher training (ITT) -->
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Initial teacher training (ITT)"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "ITT provider"
+      },
+      value: {
+        text: "West London University"
+      }
+    },
+    {
+      key: {
+        text: "Qualification"
+      },
+      value: {
+        text: "Postgraduate Certificate in Education"
+      }
+    },
+    {
+      key: {
+        text: "Certificate"
+      },
+      value: {
+        html: "Qualified teacher status certificate	"
+      }
+    },
+    {
+      key: {
+        text: "Age range"
+      },
+      value: {
+        html: "7 to 18 years"
+      }
+    },
+    {
+      key: {
+        text: "Completion date"
+      },
+      value: {
+        html: "1 September 2014"
+      }
+    }
+  ]
+}) }}
+
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends "layouts/forms.html" %}
+{% set title = 'Account details' %}
+{% set activeTab = true %}
+{% set subHeader %} {{ data.name }}'s {% endset %}
+{% set signedIn = 'true' %}
+{% set hideButton  = 'true' %}
+{% set activeTabAcc  = 'true' %}
+{% set page  = 'account' %}
+
+
+
+{% block form %}
+
+{% include 'includes/tabs.html' %}
+
+<!-- Personal details -->
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Personal details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Full name"
+      },
+      value: {
+        html: "Jane Smith"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "full-name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: "31 January 1975"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "DOB"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "National Insurance number"
+      },
+      value: {
+        html: "JL*****D"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "working situation"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+
+
+<!-- Account details -->
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Contact details"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Email address"
+      },
+      value: {
+        html: "ja******@gmail.com"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "full-name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Phone number"
+      },
+      value: {
+        html: "078********33"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "DOB"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+{% endblock %}

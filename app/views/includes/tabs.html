@@ -1,0 +1,30 @@
+{% set url %}
+  aria-current='page'
+{% endset -%}
+{%- if page == 'account' -%}
+  {% set activeTabAcc %}
+   {{ url | safe }}
+  {% endset -%}
+  {%- elseif page == 'qualification' -%}
+    {% set activeTabQual %}
+     {{ url | safe }}
+    {% endset -%}
+    {%- elseif page == 'induction' -%}
+    {% set activeTabInd %}
+     {{ url | safe }}
+    {% endset -%}    
+{%- endif -%}
+
+<nav class="app-sub-navigation">
+  <ul class="app-sub-navigation__list">
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" {{activeTabQual | safe }} href="qualifications">Qualifications</a>
+        </li>
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" {{activeTabInd | safe }}  href="induction">Induction</a>
+        </li>
+        <li class="app-sub-navigation__item">
+          <a class="app-sub-navigation__link" {{activeTabAcc | safe }}  href="account-details">Account details</a>
+        </li>
+    </ul>
+</nav>

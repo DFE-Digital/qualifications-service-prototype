@@ -1,0 +1,84 @@
+{% extends "layouts/forms.html" %}
+{% set title = 'Your induction status' %}
+{% set activeTab = true %}
+{% set subHeader %}data.name {% endset %}
+{% set signedIn = 'true' %}
+{% set hideButton  = 'true' %}
+{% set activeTabInd  = 'true' %}
+{% set page  = 'induction' %}
+
+
+
+{% block form %}
+
+{% include 'includes/tabs.html' %}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Induction history"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Status"
+      },
+      value: {
+        text: "Pass"
+      }
+    },
+    {
+      key: {
+        text: "Completion date"
+      },
+      value: {
+        html: "29 March 2013"
+      }
+    }
+  ]
+}) }}
+
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Induction history"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "Appropriate body"
+      },
+      value: {
+        text: "King Charles School"
+      }
+    },
+    {
+      key: {
+        text: "Start date"
+      },
+      value: {
+        text: "29 November 2013"
+      }
+    },
+    {
+      key: {
+        text: "End date"
+      },
+      value: {
+        html: "1 March 2014"
+      }
+    },
+    {
+      key: {
+        text: "No of terms"
+      },
+      value: {
+        html: "3"
+      }
+    }
+  ]
+}) }}
+
+{% endblock %}
