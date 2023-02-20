@@ -1,11 +1,13 @@
 {% extends "layouts/forms.html" %}
-{% set title = 'Your induction status' %}
+{% set title = 'Induction status' %}
 {% set activeTab = true %}
 {% set subHeader %}data.name {% endset %}
 {% set signedIn = 'true' %}
 {% set hideButton  = 'true' %}
 {% set activeTabInd  = 'true' %}
 {% set page  = 'induction' %}
+{% set showSubheader = true %}
+{% set subHeader %}Jane Smith's {% endset %}
 
 
 
@@ -16,7 +18,7 @@
 {{ govukSummaryList({
   card: {
     title: {
-      text: "Induction history"
+      text: "Induction status"
     }
   },
   rows: [

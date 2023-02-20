@@ -1,9 +1,11 @@
 {% extends "layouts/forms.html" %}
-{% set title = 'Your qualifications' %}
+{% set title = 'Qualifications' %}
 {% set signedIn = 'true' %}
 {% set hideButton  = 'true' %}
 {% set activeTabQual  = 'true' %}
 {% set page  = 'qualification' %}
+{% set showSubheader = true %}
+{% set subHeader %}Jane Smith's {% endset %}
 
 
 
@@ -188,6 +190,12 @@
       }
     }
   ]
+}) }}
+
+
+{{ govukDetails({
+  summaryText: "Is your name correct on your certificates?",
+  text: "If your name is incorrect you can change it here. "
 }) }}
 
 {% endblock %}
