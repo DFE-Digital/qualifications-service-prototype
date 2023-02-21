@@ -1,5 +1,5 @@
 {% extends "layouts/forms.html" %}
-{% set title = 'Account details' %}
+{% set title = 'Qualification details' %}
 {% set activeTab = true %}
 {% set subHeader %} {{ data.name }}'s {% endset %}
 {% set signedIn = 'true' %}
@@ -43,27 +43,6 @@ Jane Smith
 
 {% include 'includes/tabs.html' %}
 
-<!-- Personal details -->
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Teacher Reference Number (TRN)"
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "TRN"
-      },
-      value: {
-        html: "1851018"
-      },
-      actions: {
-       
-      }
-    }
-  ]
-}) }}
 
 <!-- Personal details -->
 {{ govukSummaryList({
@@ -152,6 +131,28 @@ Jane Smith
             visuallyHiddenText: "DOB"
           }
         ]
+      }
+    }
+  ]
+}) }}
+
+<!-- Personal details -->
+{{ govukSummaryList({
+  card: {
+    title: {
+      text: "Teacher Reference Number (TRN)"
+    }
+  },
+  rows: [
+    {
+      key: {
+        text: "TRN"
+      },
+      value: {
+        html: "1851018"
+      },
+      actions: {
+       
       }
     }
   ]

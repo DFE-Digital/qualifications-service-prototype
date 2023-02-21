@@ -1,0 +1,88 @@
+{% extends "layouts/forms.html" %}
+{% set title = 'Qualification details' %}
+{% set activeTab = true %}
+{% set subHeader %} {{ data.name }}'s {% endset %}
+{% set signedIn = 'true' %}
+{% set hideButton  = 'true' %}
+{% set activeTabAcc  = 'true' %}
+{% set page  = 'account' %}
+{% set showSubheader = true %}
+{% set subHeader %}Jane Smith's {% endset %}
+
+
+{% block beforeContent %}
+  {% include 'landing-pages/_alerts.html' %}
+{% endblock %}
+
+{% block form %}
+
+<!-- DOB header and lozenge -->
+
+  {% set dob %}
+
+    31 January 1974
+
+    {% if data['dobLozenge'] %}
+      {% include 'landing-pages/_lozenge.html' %}
+    {% endif %}
+
+  {% endset %}
+
+<!-- Name header and lozenge -->
+
+{% set name %}
+
+Jane Smith
+
+  {% if data['nameLozenge'] %}
+    {% include 'landing-pages/_lozenge.html' %}
+  {% endif %}
+
+{% endset %}
+
+
+{% include 'includes/tabs.html' %}
+
+
+<!-- Personal details -->
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date of birth"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+{% endblock %}

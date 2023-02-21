@@ -8,3 +8,5 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 require('./routes/account-flow')(router)
+require('./routes/user-research')(router)
+
