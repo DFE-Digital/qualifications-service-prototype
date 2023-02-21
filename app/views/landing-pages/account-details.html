@@ -10,10 +10,39 @@
 {% set subHeader %}Jane Smith's {% endset %}
 
 
+{% block beforeContent %}
+  {% include 'landing-pages/_alerts.html' %}
+{% endblock %}
 
 {% block form %}
 
+<!-- DOB header and lozenge -->
+
+  {% set dob %}
+
+    31 January 1974
+
+    {% if data['dobLozenge'] %}
+      {% include 'landing-pages/_lozenge.html' %}
+    {% endif %}
+
+  {% endset %}
+
+<!-- Name header and lozenge -->
+
+{% set name %}
+
+Jane Smith
+
+  {% if data['nameLozenge'] %}
+    {% include 'landing-pages/_lozenge.html' %}
+  {% endif %}
+
+{% endset %}
+
+
 {% include 'includes/tabs.html' %}
+
 <!-- Personal details -->
 {{ govukSummaryList({
   card: {
@@ -49,12 +78,12 @@
         text: "Full name"
       },
       value: {
-        html: "Jane Smith"
+        html: name
       },
       actions: {
         items: [
           {
-            href: "#",
+            href: "/edit-details/name",
             text: "Change",
             visuallyHiddenText: "full-name"
           }
@@ -66,31 +95,14 @@
         text: "Date of birth"
       },
       value: {
-        html: "31 January 1975"
+        html: dob
       },
       actions: {
         items: [
           {
-            href: "#",
+            href: "/edit-details/date-of-birth",
             text: "Change",
             visuallyHiddenText: "DOB"
-          }
-        ]
-      }
-    },
-    {
-      key: {
-        text: "National Insurance number"
-      },
-      value: {
-        html: "JL*****D"
-      },
-      actions: {
-        items: [
-          {
-            href: "#",
-            text: "Change",
-            visuallyHiddenText: "working situation"
           }
         ]
       }
@@ -113,12 +125,12 @@
         text: "Email address"
       },
       value: {
-        html: "ja******@gmail.com"
+        html: data['email']
       },
       actions: {
         items: [
           {
-            href: "#",
+            href: "/edit-details/email",
             text: "Change",
             visuallyHiddenText: "full-name"
           }
@@ -130,12 +142,12 @@
         text: "Phone number"
       },
       value: {
-        html: "078********33"
+        html: data['phone']
       },
       actions: {
         items: [
           {
-            href: "#",
+            href: "/edit-details/phone",
             text: "Change",
             visuallyHiddenText: "DOB"
           }

@@ -1,0 +1,47 @@
+{% extends "layouts/forms.html" %}
+{% set title = 'Your name' %}
+{% set signedIn = 'true' %}
+{% set notFullWidth = true %}
+{% set backlink = true %}
+
+{% block form %}
+<p>If you’ve changed your name, you’ll need to provide evidence to update it.</p>
+{{ govukInput({
+  id: "[firstName]",
+  name: "[firstName]",
+  label: {
+    text: "First name",
+    classes: 'govuk-label--s'
+  },
+  hint: {
+    text: "Or given names"
+  },
+  value: data['firstName'] or defaultData.firstName 
+}) }}
+
+{{ govukInput({
+  id: "[middleName]",
+  name: "[middleName]",
+  label: {
+    text: "Middle name (optional)",
+    classes: 'govuk-label--s'
+  },
+  value: data['middleName'] or defaultData.middleName 
+}) }}
+
+{{ govukInput({
+  id: "[lastName]",
+  name: "[lastName]",
+  label: {
+    text: "Last name",
+    classes: 'govuk-label--s'
+  },
+  hint: {
+    text: "Or family names"
+  },
+  value: data['lastName'] or defaultData.lastName 
+}) }}
+
+
+
+{% endblock %}

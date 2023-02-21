@@ -1,0 +1,27 @@
+{% extends "layouts/forms.html" %}
+{% set title = 'Your email address' %}
+{% set signedIn = 'true' %}
+{% set notFullWidth = true %}
+{% set backlink = true %}
+{% set defaultData = {
+  day: "1",
+  month: "12",
+  year: "1989"
+} %}
+
+{% block form %}
+
+{{ govukInput({
+  id: "[email]",
+  name: "[email]",
+  label: {
+    text: "",
+    classes: "govuk-label--s "
+  },
+  value: data['email'] | title if data['email'] else 'ja******@gmail.com'
+}) }}
+
+
+
+
+{% endblock %}

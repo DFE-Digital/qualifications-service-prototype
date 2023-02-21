@@ -1,0 +1,24 @@
+{% extends "layouts/forms.html" %}
+{% set title = 'Your phone number' %}
+{% set signedIn = 'true' %}
+{% set notFullWidth = true %}
+{% set backlink = true %}
+
+{% block form %}
+
+
+{{ govukInput({
+  id: "[phone]",
+  name: "[phone]",
+  type: "tel",
+  autocomplete: "tel",
+  hint: {
+    html: "For international numbers include the country code"
+  },
+  value: data['phone'] or phone
+}) }}
+
+
+
+
+{% endblock %}

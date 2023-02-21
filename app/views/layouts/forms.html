@@ -6,7 +6,11 @@
 {% endset -%}
 
 {% set pageWidth %}
-"govuk-grid-column-full"
+  {%- if notFullWidth -%}
+    govuk-grid-column-two-thirds-from-desktop
+  {%- else -%}
+    govuk-grid-column-full
+  {%- endif -%}
 {% endset -%}
 
 
@@ -19,7 +23,7 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class {{pageWidth}}>
+    <div class='{{pageWidth}}'>
       {{ govukErrorSummary({
         titleText: "There is a problem",
         errorList: [

@@ -5,7 +5,11 @@
     "start": "govuk-prototype-kit start"
   },
   "dependencies": {
+    "@govuk-prototype-kit/common-templates": "^1.0.0",
     "govuk-frontend": "^4.5.0",
-    "govuk-prototype-kit": "^13.2.4"
+    "govuk-prototype-kit": "^13.3.0",
+    "luxon": "^3.2.1",
+    "notifications-node-client": "^7.0.0",
+    "slugify": "^1.6.5"
   }
 }

@@ -1,0 +1,26 @@
+{% if data['alert'] == 'show' %}
+   {% set alertMessage %}
+ 
+   {% if data['editType'] == 'dob' or data['editType'] == 'name' %}
+
+    <h3 class="govuk-notification-banner__heading">
+        {{ data.alertType or 'name'}} change sent
+   </h3>
+    <p >We'll review your request and get back to you within 5 working days.</p>
+    {% else %}
+
+    <h3 class="govuk-notification-banner__heading">
+       {{ data.alertType or 'name'}} updated
+    </h3>
+   
+    {% endif %}
+    <p >We've sent a email confirmation to {{ data.email }}.</p>
+
+    {% endset %}
+
+  {{ govukNotificationBanner({
+    html: alertMessage,
+    type: 'success'
+  }) }}
+
+{% endif %}
