@@ -50,7 +50,7 @@ module.exports = router => {
   router.post('/landing-pages/interstitial', (req, res) => { 
     const data = req.session.data
     data.alert = 'show'
-    res.redirect('http://localhost:3001/account/account-details?service=qs') 
+    res.redirect('https://get-an-identity-prototype.herokuapp.com/account/account-details?service=qs') 
   })
 
 
