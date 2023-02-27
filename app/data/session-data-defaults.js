@@ -7,6 +7,7 @@ module.exports = {
   email: 'Ja******@gmail.com',
   phone: '078********33',
   tsa: 'Teaching services account',
-  dob: { day: 31, month: 1, year: 1973 }
+  dia: 'DfE Identity account',
+  dob: { day: 1, month: 12, year: 1989 }
 
 }

@@ -1,0 +1,108 @@
+{% extends "layouts/forms.html" %}
+{% set title = 'Teaching details' %}
+{% set subHeader %} {{ data.name }}'s {% endset %}
+{% set signedIn = 'true' %}
+{% set hideButton  = 'true' %}
+{% set showSubheader = false %}
+{% set notFullWidth = true %}
+{% set subHeader %}Jane Smith's {% endset %}
+
+
+{% block beforeContent %}
+  {% include 'landing-pages/_alerts.html' %}
+  <a class="govuk-back-link" href="qualifications?alert=hide"> Back</a>
+
+{% endblock %}
+
+{% set details %}
+  These details are different from your {{ data.dia }} <a href='../interstitial'>sign in details</a>.
+{% endset -%}
+
+
+<!-- DOB header and lozenge -->
+
+
+
+
+
+{% block form %}
+
+<!-- DOB header and lozenge -->
+
+{% set dob %}
+
+  2 December 1989
+  {% if data['dobLozenge'] %}
+  <br>   {% include 'landing-pages/_lozenge.html' %}
+  {% endif %}
+
+{% endset %}
+
+{% set name %}
+
+Jane Smith
+
+  {% if data['nameLozenge'] %}
+   <br> {% include 'landing-pages/_lozenge.html' %}
+  {% endif %}
+
+{% endset %}
+
+<p>Amend your teaching details that DfE holds on you. </p>
+
+{{ govukInsetText({
+  html: details
+}) }}
+
+<h2 class="govuk-heading-m">Name on certificate</h2>
+<p>This name is displayed on your certificates. </p>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name on certificate"
+      },
+      value: {
+        html: name
+      },
+      actions: {
+        items: [
+          {
+            href: "/edit-details/name",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }  if data['nameLozenge'] != "show"
+    }
+  ]
+}) }}
+
+
+<h2 class="govuk-heading-m">Date of birth</h2>
+<p>We use your date of birth to locate you in our records. </p>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: dob
+      },
+      actions: {
+        items: [
+          {
+            href: "/edit-details/date-of-birth",
+            text: "Change",
+            visuallyHiddenText: "dob"
+          }
+        ]
+      } if data['dobLozenge'] != "show"
+    } 
+  ]
+}) }}
+
+{% endblock %}

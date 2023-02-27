@@ -1,17 +1,17 @@
 {% extends "layouts/forms.html" %}
-{% set title %}Change your account details{% endset %}
+{% set title %}Change your sign in details{% endset %}
 {% set account  = 'true' %}
 {% set signedIn = 'true' %}
 {% set showSubheader = true %}
-{% set subHeader = data.tsa %}
-{% set buttonText = 'View account details' %}
+{% set subHeader = data.dia %}
+{% set buttonText = 'View sign-in details' %}
 {% set backlink = true %}
 
 
 
 {% block form %}
-<p class="govuk-!-margin-bottom-6">You use your {{ data.tsa }} to sign in to '{{ serviceName }}'. </p>
-<p>You can change these details in your {{ data.tsa }}</p>
+<p class="govuk-!-margin-bottom-6">You use your {{ data.dia }} to sign in to '{{ serviceName }}'. </p>
+<p>You can change these sign-in details in your {{ data.dia }}</p>
 
 <ul class="govuk-list govuk-list--bullet">
     <li>

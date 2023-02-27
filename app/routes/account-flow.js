@@ -8,7 +8,7 @@ module.exports = router => {
     data.editType = 'name'
     req.session.data['fullName'] = `${req.body['firstName']} ${req.body['lastName']}`
     data.alertType = 'Name'
-    data.nameLozenge = 'Show'
+    data.nameLozenge = 'show'
     res.redirect('/edit-details/evidence')
   })
 
@@ -44,7 +44,7 @@ module.exports = router => {
   router.post('/edit-details/check-answers', (req, res) => { 
     const data = req.session.data
     data.alert = 'show'
-    res.redirect('/landing-pages/account-details') 
+    res.redirect('/landing-pages/v2/account-details') 
   })
 
   router.post('/landing-pages/interstitial', (req, res) => { 
