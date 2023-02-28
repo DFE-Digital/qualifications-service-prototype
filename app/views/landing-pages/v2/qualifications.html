@@ -1,5 +1,5 @@
 {% extends "layouts/forms.html" %}
-{% set title = 'Your teaching qualifications' %}
+{% set title = 'Teaching qualifications' %}
 {% set signedIn = 'true' %}
 {% set hideButton  = 'true' %}
 {% set activeTabQual  = 'true' %}
@@ -11,12 +11,7 @@
 
 {% block form %}
 
-{% set details %}
-  {{ govukDetails({
-    summaryText: "Induction history",
-    text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
-  }) }}
-{% endset -%}
+
 
 
 <div class="govuk-grid-row">
@@ -26,7 +21,7 @@
   {% include 'qualifications/_qts.html' %}
 
 <!-- ITT -->
-{% include 'qualifications/_induction.html' %}
+{% include 'qualifications/_induction-v2.html' %}
 
 <!-- ITT -->
 {% include 'qualifications/_itt.html' %}

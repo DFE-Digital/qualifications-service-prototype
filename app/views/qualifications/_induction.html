@@ -1,17 +1,33 @@
-<!-- qts -->
+
+{% set details %}
+{{ govukDetails({
+  summaryText: "Induction history",
+  text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+}) }}
+{% endset -%}
+
+
 {{ govukSummaryList({
   card: {
     title: {
-      text: "Qualified teacher status (QTS)"
+      text: "Induction"
     }
   },
   rows: [
     {
       key: {
-        text: "Awarded"
+        text: "Status"
       },
       value: {
-        text: "1 September 2014"
+        text: "Pass"
+      }
+    },
+    {
+      key: {
+        text: "Completed"
+      },
+      value: {
+        html: "1 November 2015"
       }
     },
     {
@@ -19,7 +35,7 @@
         text: "Certificate"
       },
       value: {
-        html: "<a href='#'>Download QTS certificate</a>"
+        html: "<a href='#'>Download Induction certificate</a>"
       }
     }
   ]

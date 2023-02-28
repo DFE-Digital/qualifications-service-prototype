@@ -50,11 +50,20 @@
   font-size: 16px;
 }
 
-.details-menu a {
+.details-menu a, .induction-history {
   font-size: 16px;
 }
 
 .details-menu .govuk-tag {
   font-size: 14px;
   margin-top: 4px;
+}
+
+.induction-history {
+  border-top: 1px solid #b1b4b6;
+  padding-top: 10px;
+}
+
+.induction-history .govuk-details{
+  margin: 0 
 }
