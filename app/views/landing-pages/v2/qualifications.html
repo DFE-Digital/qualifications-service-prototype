@@ -11,175 +11,57 @@
 
 {% block form %}
 
+{% set details %}
+  {{ govukDetails({
+    summaryText: "Induction history",
+    text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
+  }) }}
+{% endset -%}
+
+
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds-from-desktop">
-<!-- qts -->
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Qualified teacher status (QTS)"
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Awarded"
-      },
-      value: {
-        text: "1 September 2014"
-      }
-    },
-    {
-      key: {
-        text: "Certificate"
-      },
-      value: {
-        html: "<a href='#'>Download QTS certificate</a>"
-      }
-    }
-  ]
-}) }}
+
+<!-- QTS -->
+  {% include 'qualifications/_qts.html' %}
 
 <!-- ITT -->
-
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Induction"
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Status"
-      },
-      value: {
-        text: "Pass"
-      }
-    },
-    {
-      key: {
-        text: "Completed"
-      },
-      value: {
-        html: "1 November 2015"
-      }
-    },
-    {
-      key: {
-        text: "Certificate"
-      },
-      value: {
-        html: "<a href='#'>Download Induction certificate</a>"
-      }
-    }
-  ]
-}) }}
+{% include 'qualifications/_induction.html' %}
 
 <!-- ITT -->
+{% include 'qualifications/_itt.html' %}
 
-{{ govukSummaryList({
-  card: {
-    title: {
-      text: "Initial teacher training (ITT)"
-    }
-  },
-  rows: [
-    {
-      key: {
-        text: "Qualification"
-      },
-      value: {
-        text: "Postgraduate Certificate in Education"
-      }
-    },
-    {
-      key: {
-        text: "ITT provider"
-      },
-      value: {
-        html: "West London University"
-      }
-    },
-    {
-      key: {
-        text: "Training type"
-      },
-      value: {
-        html: "HEI"
-      }
-    },
-    {
-      key: {
-        text: "Subjects"
-      },
-      value: {
-        html: "English, <br> Maths"
-      }
-    },
-    {
-      key: {
-        text: "Start date"
-      },
-      value: {
-        html: "1 November 2013"
-      }
-    },
-    {
-      key: {
-        text: "End date"
-      },
-      value: {
-        html: "1 September 2014"
-      }
-    },
-    {
-      key: {
-        text: "Result"
-      },
-      value: {
-        html: "Pass"
-      }
-    },
-    {
-      key: {
-        text: "Age range"
-      },
-      value: {
-        html: "7 to 18 years"
-      }
-    }
-  ]
-}) }}
+
+
+
 </div>
 
+<div class="govuk-grid-column-one-third details-menu">
+  <h3 class="govuk-heading-m ">Your details</h3>
+  
+  <p>
+    Name on certificates<br> 
+    <b>Jane Smith</b>
+    {% if data['dobLozenge'] %}
+    <br> {% include 'landing-pages/_lozenge.html' %}
+    {% endif %}
+  </p>
+  <p>
+    Date of birth<br> 
+    <b>2 December 1989</b>  
+    {% if data['dobLozenge'] %}
+    <br> {% include 'landing-pages/_lozenge.html' %}
+    {% endif %}
+  </p>
 
-  <div class="govuk-grid-column-one-third details-menu">
-    <h3 class="govuk-heading-m ">Your details</h3>
-   
-    <p>
-      Name on certificates<br> 
-      <b>Jane Smith</b>
-      {% if data['nameLozenge'] %}
-      <br> {% include 'landing-pages/_lozenge.html' %}
-      {% endif %}
-    </p>
-    <p>
-      Date of birth<br> 
-      <b>2 December 1989</b>  
-      {% if data['dobLozenge'] %}
-      <br> {% include 'landing-pages/_lozenge.html' %}
-      {% endif %}
-    </p>
-
-    <p>
-      Teacher Reference number (TRN)<br> 
-      <b>1851018</b>
-    </p>
-    <p>
-      <a href='account-details'>View and update details</a>
-    </p>
-  </div>
+  <p>
+    Teacher Reference number (TRN)<br> 
+    <b>1851018</b>
+  </p>
+  <p>
+    <a href='account-details'>View and update details</a>
+  </p>
+</div>
 
 </div>
 
