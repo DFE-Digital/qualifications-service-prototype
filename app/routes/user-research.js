@@ -2,14 +2,17 @@ const _ = require('lodash')
 
 module.exports = router => {
 
-  router.get('/user-research/scenario-3/', (req, res) => {
+  router.get('/user-research/mvp/', (req, res) => {
     const data = req.session.data
-    data.identityServiceName = 'Access your teaching profile'
-    data.onwardContinue = 'to access your teaching profile'
-    data.returnToService = '/account/account-details'
-    data.scenario = '3'
-    data.hasIdentity = false
-    res.redirect('/landing-pages/interstitial')
+    data.scenario = '1'
+    data.mvp = 'true'
+    res.redirect('/landing-pages/v2/qualifications')
+  })
+  router.get('/user-research/all-quals/', (req, res) => {
+    const data = req.session.data
+    data.scenario = '1'
+    data.mvp = 'false'
+    res.redirect('/landing-pages/v2/qualifications')
   })
 
 router.get('/auth/return-to-service', (req, res) => {

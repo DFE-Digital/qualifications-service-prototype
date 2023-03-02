@@ -1,66 +1,30 @@
 {% extends "layouts/forms.html" %}
 {% set title = 'Teaching qualifications' %}
+{% set subHeader %}{{data.DQTfullName}}'s {% endset %}
 {% set signedIn = 'true' %}
 {% set hideButton  = 'true' %}
-{% set activeTabQual  = 'true' %}
-{% set page  = 'qualification' %}
 {% set showSubheader = true %}
-{% set subHeader %}Victoria Smith's {% endset %}
+{% set showDetails = true %}
 
 
 
 {% block form %}
 
 
+  {% if data['mvp'] == 'false' %}
+      <!-- npq executive -->
+      {% include 'includes/qualifications/_npq-executive.html' %}
+      <!-- npw headteacher -->
+      {% include 'includes/qualifications/_npq-headteacher.html' %}
+      <!-- Early years -->
+      {% include 'includes/qualifications/_eyts.html' %}
+ {% endif %}
+    <!-- Induction -->
+    {% include 'includes/qualifications/_induction.html' %}
+    <!-- QTS -->
+      {% include 'includes/qualifications/_qts.html' %}
+    <!-- ITT -->
+    {% include 'includes/qualifications/_itt.html' %}
 
-
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-two-thirds-from-desktop">
-
-
-<!-- ITT -->
-{% include 'qualifications/_induction.html' %}
-
-
-<!-- QTS -->
-  {% include 'qualifications/_qts.html' %}
-
-
-<!-- ITT -->
-{% include 'qualifications/_itt.html' %}
-
-
-
-
-</div>
-
-<div class="govuk-grid-column-one-third details-menu">
-  <h3 class="govuk-heading-m ">Your details</h3>
-  
-  <p>
-    Name on certificates<br> 
-    <b>Victoria Smith</b>
-    {% if data['nameLozenge'] %}
-    <br> {% include 'landing-pages/_lozenge.html' %}
-    {% endif %}
-  </p>
-  <p>
-    Date of birth<br> 
-    <b>2 December 1989</b>  
-    {% if data['dobLozenge'] %}
-    <br> {% include 'landing-pages/_lozenge.html' %}
-    {% endif %}
-  </p>
-
-  <p>
-    Teacher Reference number (TRN)<br> 
-    <b>1851018</b>
-  </p>
-  <p>
-    <a href='account-details'>View and update details</a>
-  </p>
-</div>
-
-</div>
 
 {% endblock %}

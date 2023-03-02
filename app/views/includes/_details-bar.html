@@ -1,0 +1,25 @@
+
+  <h3 class="govuk-heading-m ">Your details</h3>
+  
+  <p>
+    Name on certificates<br> 
+    <b>{{ data.DQTfullName }}</b>
+    {% if data['nameLozenge'] %}
+    <br> {% include 'landing-pages/_lozenge.html' %}
+    {% endif %}
+  </p>
+  <p>
+    Date of birth<br> 
+    <b>{{ data.dqtDob | isoDateFromDateInput | date }}</b>  
+    {% if data['dobLozenge'] %}
+    <br> {% include 'landing-pages/_lozenge.html' %}
+    {% endif %}
+  </p>
+
+  <p>
+    Teacher Reference number (TRN)<br> 
+    <b>{{ data.trn  or 1851018}}</b>
+  </p>
+  <p>
+    <a href='account-details'>View and update details</a>
+  </p>

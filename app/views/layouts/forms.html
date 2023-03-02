@@ -23,7 +23,7 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-    <div class='{{pageWidth}}'>
+    <div class='govuk-grid-column-two-thirds-from-desktop'>
       {{ govukErrorSummary({
         titleText: "There is a problem",
         errorList: [
@@ -51,6 +51,14 @@
       {% endif %}
       {{ secondaryButton | safe if secondaryButton }}
       </form>
+
+
     </div>
+    {% if showDetails %}
+      <div class="govuk-grid-column-one-third details-menu">
+        {% include 'includes/_details-bar.html' %}
+      </div>
+    {% endif %}
+
   </div>
 {% endblock %}

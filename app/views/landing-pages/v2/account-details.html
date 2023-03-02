@@ -19,19 +19,15 @@
 {% endset -%}
 
 
-<!-- DOB header and lozenge -->
-
-
-
 
 
 {% block form %}
 
-<!-- DOB header and lozenge -->
 
 {% set dob %}
+<!-- DOB header and lozenge -->
 
-  2 December 1989
+{{ data.dqtDob | isoDateFromDateInput | date }}
   {% if data['dobLozenge'] %}
   <br>   {% include 'landing-pages/_lozenge.html' %}
   {% endif %}
@@ -39,8 +35,9 @@
 {% endset %}
 
 {% set name %}
+<!-- Name header and lozenge -->
 
-Victoria Smith
+{{ data.DQTfullName }}
 
   {% if data['nameLozenge'] %}
    <br> {% include 'landing-pages/_lozenge.html' %}
