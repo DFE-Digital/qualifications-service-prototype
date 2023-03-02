@@ -8,6 +8,6 @@ module.exports = {
   phone: '078********33',
   tsa: 'Teaching services account',
   dia: 'DfE Identity account',
-  dob: { day: 1, month: 12, year: 1989 }
+  dob: { day: 2, month: 12, year: 1989 }
 
 }
