@@ -1,8 +1,8 @@
 module.exports = {
 
   // Insert values here
-  fullName: 'Jane Smith',
-  firstName: 'Jane',
+  fullName: 'Victoria Smith',
+  firstName: 'Victoria',
   lastName: 'Smith',
   email: 'Ja******@gmail.com',
   phone: '078********33',
