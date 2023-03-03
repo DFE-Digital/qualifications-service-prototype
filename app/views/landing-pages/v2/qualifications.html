@@ -18,13 +18,31 @@
       {% include 'includes/qualifications/_npq-headteacher.html' %}
       <!-- Early years -->
       {% include 'includes/qualifications/_eyts.html' %}
- {% endif %}
-    <!-- Induction -->
-    {% include 'includes/qualifications/_induction.html' %}
-    <!-- QTS -->
+      <!-- Induction -->
+      {% include 'includes/qualifications/_induction.html' %}
+      <!-- MQ -->
+      {% include 'includes/qualifications/_mq.html' %}      
+      <!-- QTS -->
       {% include 'includes/qualifications/_qts.html' %}
-    <!-- ITT -->
-    {% include 'includes/qualifications/_itt.html' %}
+      <!-- ITT -->
+      {% include 'includes/qualifications/_itt.html' %}
+   
+     {% elseif data['mvp'] == 'true' %}
+      <!-- Induction -->
+      {% include 'includes/qualifications/_induction.html' %}
+      <!-- MQ -->
+      {% include 'includes/qualifications/_mq.html' %}       
+      <!-- QTS -->
+      {% include 'includes/qualifications/_qts.html' %}
+      <!-- ITT -->
+      {% include 'includes/qualifications/_itt.html' %}
+   
+    {% elseif data['mvp'] == 'induction' %}
+      <!-- Induction -->
+      {% include 'includes/qualifications/_induction.html' %}
+      <!-- Induction exempt-->
+      {% include 'includes/qualifications/_induction-others.html' %}
+    {% endif %}
 
 
 {% endblock %}

@@ -1,0 +1,249 @@
+{% set detailsTable %}
+
+
+{{ govukSummaryList({
+  classes: 'induction-history',
+  rows: [
+    {
+      key: {
+        text: "Appropriate body"
+      },
+      value: {
+        text: "East London Teaching School Hub"
+      }
+    },
+    {
+      key: {
+        text: "Start date"
+      },
+      value: {
+        text: "5 June 2015"
+      }
+    },
+    {
+      key: {
+        text: "End date"
+      },
+      value: {
+        html: "1 October 2015"
+      }
+    },
+    {
+      key: {
+        text: "Terms"
+      },
+      value: {
+        html: "1"
+      }
+    }
+  ]
+}) }}
+<br>
+{{ govukSummaryList({
+  classes: 'induction-history',
+  rows: [
+    {
+      key: {
+        text: "Appropriate body"
+      },
+      value: {
+        text: "National Teacher Accreditation"
+      }
+    },
+    {
+      key: {
+        text: "Start date"
+      },
+      value: {
+        text: "5 January 2014"
+      }
+    },
+    {
+      key: {
+        text: "End date"
+      },
+      value: {
+        html: "1 June 2015"
+      }
+    },
+    {
+      key: {
+        text: "Terms"
+      },
+      value: {
+        html: "2"
+      }
+    }
+  ]
+}) }}
+
+{% endset -%}
+<!-- Exempt -->
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Induction</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Not Yet Completed 
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Exemption reason	
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Extended on appeal
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eligible for one year induction	
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Yes
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Extension period 	
+        </dt>
+        <dd class="govuk-summary-list__value">
+           2 days
+        </dd>
+  
+      </div>      
+  
+      
+    </dl>
+    <div class="induction-history">
+      {{ govukDetails({
+        summaryText: "Induction history",
+        html: detailsTable
+      }) }}  
+    </div>
+  </div>
+</div>
+
+
+<!-- Exempt -->
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Induction</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Exempt
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Exemption reason	
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Extended on appeal
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eligible for one year induction	
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Yes
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Extension period 	
+        </dt>
+        <dd class="govuk-summary-list__value">
+           2 days
+        </dd>
+  
+      </div>      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Completed	
+        </dt>
+        <dd class="govuk-summary-list__value">
+            1 November 2015
+        </dd>
+  
+      </div>
+      
+    </dl>
+    <div class="induction-history">
+      {{ govukDetails({
+        summaryText: "Induction history",
+        html: detailsTable
+      }) }}  
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Fail -->
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Induction</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Fail
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Exemption reason	
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Failure reason goes here
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Eligible for one year induction	
+        </dt>
+        <dd class="govuk-summary-list__value">
+           Yes
+        </dd>
+  
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Extension period 	
+        </dt>
+        <dd class="govuk-summary-list__value">
+           2 days
+        </dd>
+  
+      </div>      
+
+
+    </dl>
+  </div>
+</div>

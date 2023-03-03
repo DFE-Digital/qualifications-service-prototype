@@ -10,8 +10,15 @@ module.exports = router => {
   })
   router.get('/user-research/all-quals/', (req, res) => {
     const data = req.session.data
-    data.scenario = '1'
+    data.scenario = '2'
     data.mvp = 'false'
+    res.redirect('/landing-pages/v2/qualifications')
+  })
+
+  router.get('/user-research/all-induction/', (req, res) => {
+    const data = req.session.data
+    data.scenario = '3'
+    data.mvp = 'induction'
     res.redirect('/landing-pages/v2/qualifications')
   })
 
