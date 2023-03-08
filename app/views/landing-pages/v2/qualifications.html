@@ -27,7 +27,7 @@
       <!-- ITT -->
       {% include 'includes/qualifications/_itt.html' %}
    
-     {% elseif data['mvp'] == 'true' %}
+     {% elseif data['mvp'] == 'true' or data['mvp'] != 'true' %}
       <!-- Induction -->
       {% include 'includes/qualifications/_induction.html' %}
       <!-- MQ -->
