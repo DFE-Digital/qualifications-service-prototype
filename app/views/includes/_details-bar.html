@@ -5,14 +5,14 @@
     Name on certificates<br> 
     <b>{{ data.DQTfullName }}</b>
     {% if data['nameLozenge'] %}
-    <br> {% include 'landing-pages/_lozenge.html' %}
+    <br> {% include 'includes/_lozenge.html' %}
     {% endif %}
   </p>
   <p>
     Date of birth<br> 
     <b>{{ data.dqtDob | isoDateFromDateInput | date }}</b>  
     {% if data['dobLozenge'] %}
-    <br> {% include 'landing-pages/_lozenge.html' %}
+    <br> {% include 'includes/_lozenge.html' %}
     {% endif %}
   </p>
 

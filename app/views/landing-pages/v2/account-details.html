@@ -9,7 +9,7 @@
 
 
 {% block beforeContent %}
-  {% include 'landing-pages/_alerts.html' %}
+  {% include 'includes/_alerts.html' %}
   <a class="govuk-back-link" href="qualifications?alert=hide"> Back to your qualifications</a>
 
 {% endblock %}
@@ -29,7 +29,7 @@
 
 {{ data.dqtDob | isoDateFromDateInput | date }}
   {% if data['dobLozenge'] %}
-  <br>   {% include 'landing-pages/_lozenge.html' %}
+  <br>   {% include 'includes/_lozenge.html' %}
   {% endif %}
 
 {% endset %}
@@ -40,7 +40,7 @@
 {{ data.DQTfullName }}
 
   {% if data['nameLozenge'] %}
-   <br> {% include 'landing-pages/_lozenge.html' %}
+   <br> {% include 'includes/_lozenge.html' %}
   {% endif %}
 
 {% endset %}
