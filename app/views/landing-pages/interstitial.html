@@ -1,31 +1,24 @@
-{% extends "layouts/forms.html" %}
-{% set title %}Change your sign in details{% endset %}
+{% extends "layouts/forms-interrupt.html" %}
+{% set subHeader %}Change your details{% endset %}
+{% set title = data.dia %}
 {% set account  = 'true' %}
 {% set signedIn = 'true' %}
-{% set showSubheader = true %}
-{% set subHeader = data.dia %}
+{% set hideButton = 'true' %}
 {% set buttonText = 'Access your ' + data.dia %}
 {% set backlink = true %}
 
 
 
 {% block form %}
-<p class="govuk-!-margin-bottom-6">You use your {{ data.dia }} to sign in to '{{ serviceName }}'. </p>
-<p>You can change these sign-in details in your {{ data.dia }}</p>
+<!-- <span class="govuk-caption-xl ">{{subHeader}}</span> -->
 
-<ul class="govuk-list govuk-list--bullet">
-    <li>
-        email address
-    </li>
-    <li>
-        name
-    </li>
-    <li>
-        date of birth
-    </li>
-    <li>
-        mobile number
-    </li>
-</ul>
+<h1 class="govuk-panel__title">{{ title }}</h1>
 
+<p class="govuk-!-margin-bottom-6">You can change your certifcate name and sign in details in your {{ data.dia }}. </p>
+<p class="govuk-!-margin-bottom-6">You use your {{ data.dia }} to sign in to <b>'{{ serviceName }}'</b>. </p>
+
+{{ govukButton({
+    classes: "app-button--inverse govuk-!-margin-bottom-0",
+    html: buttonText if buttonText else 'Continue'
+  }) }}
 {% endblock %}

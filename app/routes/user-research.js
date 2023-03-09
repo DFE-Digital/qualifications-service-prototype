@@ -6,20 +6,20 @@ module.exports = router => {
     const data = req.session.data
     data.scenario = '1'
     data.mvp = 'true'
-    res.redirect('/landing-pages/v2/qualifications')
+    res.redirect('/landing-pages/v3/qualifications')
   })
   router.get('/user-research/all-quals/', (req, res) => {
     const data = req.session.data
     data.scenario = '2'
     data.mvp = 'false'
-    res.redirect('/landing-pages/v2/qualifications')
+    res.redirect('/landing-pages/v3/qualifications')
   })
 
   router.get('/user-research/all-induction/', (req, res) => {
     const data = req.session.data
     data.scenario = '3'
     data.mvp = 'induction'
-    res.redirect('/landing-pages/v2/qualifications')
+    res.redirect('/landing-pages/v3/qualifications')
   })
 
 router.get('/auth/return-to-service', (req, res) => {

@@ -24,12 +24,13 @@
 {% endblock %}
 
 {% block content %}
-<h2 class="govuk-heading-m">Qual V2 
-
+<h2 class="govuk-heading-m">Qual V3 
   {{govukTag({
     text: "latest design",
     classes: "govuk-tag--blue"
   })}}
+
+
 </h2>
 <p class="govuk-!-font-weight-bold">Start page and auth</p>
 <p><a href='landing-pages/start'>Qualifications start page + auth</a></p>
@@ -41,8 +42,44 @@
 <p><a href='/user-research/mvp/'>MVP (Induction, QTS,  ITT & MQ)</a></p>
 <p><a href='/user-research/all-induction/'>All induction types</a></p>
 
-<p class="govuk-!-font-weight-bold">Qualifications landing page </p>
-<p><a href='landing-pages/v2/account-details'>Account details landing page</a></p>
+{{ govukDetails({
+  summaryText: "V3 Changes include",
+  html: "
+  <p>Qual service becomes </p>
+  <p>Moving of DQT data into the DfE identity account</p>
+  <p>Amendments of interstitial page to the DfE identity account</p>
+  "
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<h2 class="govuk-heading-m">Qual V2   
+  {{govukTag({
+  text: "Archived",
+  classes: "govuk-tag--yellow"
+})}} </h2>
+<p class="govuk-!-font-weight-bold">Start page and auth</p>
+<p><a href='landing-pages/start'>Qualifications start page + auth</a></p>
+
+
+<p class="govuk-!-font-weight-bold">Qualifications landing page  </p>
+
+<p><a href='/landing-pages/v2/qualifications'>MVP (Induction, QTS,  ITT & MQ)</a></p>
+
+<p class="govuk-!-font-weight-bold">Qualifications account page </p>
+<p class="govuk-!-margin-bottom-7"><a href='landing-pages/v2/account-details'>Account details landing page</a></p>
+
+{{ govukDetails({
+  summaryText: "V2 Changes include",
+  html: "
+  <p>removal of tabs</p>
+  <p>user panel on quals showing dqt data</p>
+  <p>reduction in qual panel to 3/4 width </p>
+  <p>Contextual downloads that include the qual type </p>
+  <p>Links to DfE Identity account </p>
+  "
+}) }}
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
@@ -51,8 +88,20 @@
   text: "Archived",
   classes: "govuk-tag--yellow"
 })}} </h2>
-<p>Design and quals taken from the TSSP - design does not inlude auth</p>
+<p>Design and quals based on 'Access your teaching profile prototype'</p>
 <p><a href='landing-pages/v1/qualifications'>Qualifications landing page</a></p>
 <p><a href='landing-pages/v1/induction'>Induction landing page</a></p>
 <p><a href='landing-pages/v1/account-details'>Account details landing page</a></p>
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+<h2 class="govuk-heading-m">Access your teaching profile prototype         
+  {{govukTag({
+  text: "Archived",
+  classes: "govuk-tag--yellow"
+})}} </h2>
+<p>Previous project from 2022 which redesigned the teacher self-service portal</p>
+<p>Link to original <a href='https://teacher-self-serve-prototype.herokuapp.com/'> Access your teaching profile prototype</a> (pw: tss)</p>
+<p><a href='https://tra-digital-design-history.herokuapp.com/teacher-self-service-portal/'>Teaching profile design history</a></p>
+<p><a href='https://tra-digital-design-history.herokuapp.com/teacher-self-service-portal/'>Miro mapping out TSSP and AYTP</a></p>
 {% endblock %}

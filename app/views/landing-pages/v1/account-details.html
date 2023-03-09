@@ -11,7 +11,7 @@
 
 
 {% block beforeContent %}
-  {% include 'landing-pages/_alerts.html' %}
+  {% include 'includes/_alerts.html' %}
 {% endblock %}
 
 {% block form %}
@@ -23,7 +23,7 @@
     31 January 1974
 
     {% if data['dobLozenge'] %}
-      {% include 'landing-pages/_lozenge.html' %}
+      {% include 'includes/_lozenge.html' %}
     {% endif %}
 
   {% endset %}
@@ -35,7 +35,7 @@
 Jane Smith
 
   {% if data['nameLozenge'] %}
-    {% include 'landing-pages/_lozenge.html' %}
+    {% include 'includes/_lozenge.html' %}
   {% endif %}
 
 {% endset %}

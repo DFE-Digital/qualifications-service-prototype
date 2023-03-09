@@ -5,33 +5,11 @@
 
 // Add extra styles here
 
-@import "patterns/sub-navigation";
+@import "patterns/_sub-navigation";
+@import "patterns/_masthead";
+@import "patterns/_panel";
 
 
-// Prototype index page styles
-.app-masthead {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: govuk-colour("white");
-  background-color: govuk-colour("blue");
-  margin-top: -10px;
-}
-
-@media (min-width: 40.0625em) {
-  .app-masthead {
-    padding-top: 40px;
-  }
-}
-
-.app-masthead__title,
-.app-masthead__subtitle,
-.app-masthead p {
-  color: govuk-colour("white") !important;
-}
-
-.app-masthead__subtitle {
-  font-weight: normal !important;
-}
 #bannerBar {
   background-color: #F3F2F1;
   padding: 0 0 0 0.5em;  

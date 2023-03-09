@@ -1,6 +1,8 @@
 
   <h3 class="govuk-heading-m ">Your details</h3>
-  
+  {% if showDetailsInterstitial == true %}
+  <p>These details can be updated in your DfE identity account.</p>
+  {% endif %}
   <p>
     Name on certificates<br> 
     <b>{{ data.DQTfullName }}</b>
@@ -21,5 +23,11 @@
     <b>{{ data.trn  or 1851018}}</b>
   </p>
   <p>
-    <a href='account-details'>View and update details</a>
+     
+   {% if showDetailsInterstitial == true %}
+   <a href='/landing-pages/interstitial'>View and update details</a>
+
+   {% else %}
+   <a href='account-details'>View and update details</a>
+   {% endif %}
   </p>
