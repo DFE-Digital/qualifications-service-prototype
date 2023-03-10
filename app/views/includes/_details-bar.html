@@ -1,8 +1,6 @@
 
   <h3 class="govuk-heading-m ">Your details</h3>
-  {% if showDetailsInterstitial == true %}
-  <p>These details can be updated in your DfE identity account.</p>
-  {% endif %}
+
   <p>
     Name on certificates<br> 
     <b>{{ data.DQTfullName }}</b>
@@ -11,6 +9,16 @@
     {% endif %}
   </p>
   <p>
+    Teacher Reference number (TRN)<br> 
+    <b>{{ data.trn  or 1851018}}</b>
+  </p>
+     
+   {% if showDetailsInterstitial == true %}
+   <a href='/landing-pages/interstitial'>View and update details</a>
+
+   {% else %}
+
+   <p>
     Date of birth<br> 
     <b>{{ data.dqtDob | isoDateFromDateInput | date }}</b>  
     {% if data['dobLozenge'] %}
@@ -23,11 +31,6 @@
     <b>{{ data.trn  or 1851018}}</b>
   </p>
   <p>
-     
-   {% if showDetailsInterstitial == true %}
-   <a href='/landing-pages/interstitial'>View and update details</a>
-
-   {% else %}
    <a href='account-details'>View and update details</a>
    {% endif %}
   </p>
