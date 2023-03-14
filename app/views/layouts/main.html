@@ -8,7 +8,7 @@
     {% set accountLink %}
     
       {%- if account == 'true' -%}
-            /account/account-details?alert=hide
+           /user-research/mvp/
          {%- else -%}
            /landing-pages/interstitial
       {%- endif -%}
@@ -32,7 +32,7 @@
             active: true if account == 'true'
           },      
           {
-            href: "https://get-an-identity-prototype.herokuapp.com/account/signed-out?service=qs",
+            href: "https://get-an-identity-prototype.herokuapp.com/user-research/qual/sign-out",
             text: "Sign out"
           }
         ] if signedIn == 'true'
