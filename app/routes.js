@@ -10,3 +10,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 require('./routes/account-flow')(router)
 require('./routes/user-research')(router)
 
+router.post('/recieved-data', (req, res) => {
+    req.session.data['account-data'] = JSON.parse(req.body['account-data'])
+    res.redirect('/user-research/all-induction/')
+  }) 
