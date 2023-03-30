@@ -2,7 +2,7 @@ module.exports = {
 
   // Insert values here
   fullName: 'Victoria Smith',
-  DQTfullName: 'Victoria Smith',
+  DQTfullName: 'Name Removed',
   firstName: 'Victoria',
   lastName: 'Smith',
   email: 'Ja******@gmail.com',
