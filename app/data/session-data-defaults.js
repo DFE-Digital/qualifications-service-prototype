@@ -1,10 +1,10 @@
 module.exports = {
 
   // Insert values here
-  fullName: 'Andrea Armstrong',
-  DQTfullName: 'Andrea Armstrong',
-  firstName: 'Victoria',
-  lastName: 'Smith',
+  fullName: 'Amartey Wisdom',
+  DQTfullName: 'Amartey Wisdom',
+  firstName: 'Amartey',
+  lastName: 'Wisdom',
   email: 'Ja******@gmail.com',
   phone: '078********33',
   dia: 'DfE Identity account',
