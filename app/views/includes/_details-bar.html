@@ -9,8 +9,8 @@
       Official name
     </li>
     <li>
-      <span class="govuk-!-font-weight-bold">{{ data.DQTfullName }}</span>
-      <p class="govuk-hint govuk-!-font-size-14">Displayed on teaching certificates </p>
+      <span class="govuk-!-font-weight-bold">{{ data.user | getDqtShortName }}</span>
+      <p class="govuk-hint govuk-!-font-size-14">Displayed on teaching certificates</p>
     </li>
   </ul>
   <ul class="govuk-list govuk-!-font-size-16">
@@ -18,7 +18,7 @@
       Teacher Reference number (TRN)
     </li>
     <li>
-      <p class="govuk-!-font-weight-bold">{{ data.trn  or 1851018}} </p>
+      <p class="govuk-!-font-weight-bold">{{ data.user.trn  or 1851018}} </p>
     </li>
   </ul>
 

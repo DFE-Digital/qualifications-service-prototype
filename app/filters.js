@@ -21,6 +21,25 @@ addFilter('isoDateFromDateInput', function(object) {
   }
 })
 
+addFilter('getDqtFullName', user => {
+
+  let names = []
+  names.push(user.firstNames)
+  names.push(user.middleNames)
+  names.push(user.lastNames)
+  names.filter(Boolean)
+  return names.join(' ')
+})
+
+addFilter('getDqtShortName', user => {
+
+  let names = []
+  names.push(user.firstNames)
+  names.push(user.lastNames)
+  names.filter(Boolean)
+  return names.join(' ')
+})
+
 addFilter('slugify', function(string) {
   return slugify(string, {
     replacement: '-',
