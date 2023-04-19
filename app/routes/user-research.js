@@ -2,8 +2,19 @@ const _ = require('lodash')
 
 module.exports = router => {
 
-  router.get('/user-research/mvp/', (req, res) => {
+  router.all('/user-research/mvp/', (req, res) => {
     const data = req.session.data
+    data.scenario = '1'
+    data.mvp = 'true'
+    res.redirect('/landing-pages/v3/qualifications')
+  })
+
+  router.post('/signed-in', (req, res) => {
+    const data = req.session.data
+
+    data.user = JSON.parse(data.userDataFromIdentityAccount)
+
+    delete data.userDataFromIdentityAccount
     data.scenario = '1'
     data.mvp = 'true'
     res.redirect('/landing-pages/v3/qualifications')
