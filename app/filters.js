@@ -21,21 +21,40 @@ addFilter('isoDateFromDateInput', function(object) {
   }
 })
 
-addFilter('getDqtFullName', user => {
+// First, middle, last
+addFilter('getFullName', user => {
 
   let names = []
-  names.push(user.firstNames)
-  names.push(user.middleNames)
-  names.push(user.lastNames)
+
+  // Prefer DQT Name
+  if (user?.dqtUser){
+    names.push(user.dqtUser.firstNames)
+    names.push(user.dqtUser.middleNames)
+    names.push(user.dqtUser.lastNames)
+  }
+  else {
+    names.push(user.firstNames)
+    names.push(user.middleNames)
+    names.push(user.lastNames)
+  }
+
   names.filter(Boolean)
   return names.join(' ')
 })
 
-addFilter('getDqtShortName', user => {
+// First and last
+addFilter('getShortName', user => {
 
   let names = []
-  names.push(user.firstNames)
-  names.push(user.lastNames)
+  // Prefer DQT Name
+  if (user?.dqtUser){
+    names.push(user.dqtUser.firstNames)
+    names.push(user.dqtUser.lastNames)
+  }
+  else {
+    names.push(user.firstNames)
+    names.push(user.lastNames)
+  }
   names.filter(Boolean)
   return names.join(' ')
 })
