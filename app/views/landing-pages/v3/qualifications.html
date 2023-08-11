@@ -1,6 +1,16 @@
 {% extends "layouts/forms.html" %}
 {% set title = 'Teaching qualifications' %}
-{% set subHeader %}{{data.user | getShortName}}’s {% endset %}
+
+
+
+
+{% set user = data.user %}
+{% if not data.user %}
+  {% set user = {firstNames: 'Adam', lastNames: 'Culpan' } %}
+{% endif %}
+
+
+{% set subHeader %}{{user | getShortName}}’s {% endset %}
 {% set signedIn = 'true' %}
 {% set hideButton  = 'true' %}
 {% set showSubheader = true %}
@@ -23,22 +33,22 @@
       <!-- Induction -->
       {% include 'includes/qualifications/_induction.html' %}
       <!-- MQ -->
-      {% include 'includes/qualifications/_mq.html' %}      
+      {% include 'includes/qualifications/_mq.html' %}
       <!-- QTS -->
       {% include 'includes/qualifications/_qts.html' %}
       <!-- ITT -->
       {% include 'includes/qualifications/_itt.html' %}
-   
+
      {% elseif data['mvp'] == 'true' or data['mvp'] != 'true' %}
       <!-- Induction -->
       {% include 'includes/qualifications/_induction.html' %}
       <!-- MQ -->
-      {% include 'includes/qualifications/_mq.html' %}       
+      {% include 'includes/qualifications/_mq.html' %}
       <!-- QTS -->
       {% include 'includes/qualifications/_qts.html' %}
       <!-- ITT -->
       {% include 'includes/qualifications/_itt.html' %}
-   
+
     {% elseif data['mvp'] == 'induction' %}
       <!-- Induction -->
       {% include 'includes/qualifications/_induction.html' %}

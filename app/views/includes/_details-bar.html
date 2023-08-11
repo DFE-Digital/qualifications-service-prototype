@@ -2,14 +2,14 @@
   <h3 class="govuk-heading-m ">Your details</h3>
 
 
-     
+
    {% if showDetailsInterstitial == true %}
   <ul class="govuk-list govuk-!-font-size-16">
     <li>
       Official name
     </li>
     <li>
-      <span class="govuk-!-font-weight-bold">{{ data.user | getShortName }}</span>
+      <span class="govuk-!-font-weight-bold">{{ user | getShortName }}</span>
       <p class="govuk-hint govuk-!-font-size-14">Displayed on teaching certificates</p>
     </li>
   </ul>
@@ -26,7 +26,7 @@
 
    {% else %}
    <p>
-    Name on certificates<br> 
+    Name on certificates<br>
     <b>{{ data.DQTfullName }}</b>
     {% if data['nameLozenge'] %}
     <br> {% include 'includes/_lozenge.html' %}
@@ -34,15 +34,15 @@
   </p>
 
    <p>
-    Date of birth<br> 
-    <b>{{ data.dqtDob | isoDateFromDateInput | date }}</b>  
+    Date of birth<br>
+    <b>{{ data.dqtDob | isoDateFromDateInput | date }}</b>
     {% if data['dobLozenge'] %}
     <br> {% include 'includes/_lozenge.html' %}
     {% endif %}
   </p>
 
   <p>
-    Teacher Reference number (TRN)<br> 
+    Teacher Reference number (TRN)<br>
     <b>{{ data.trn  or 1851018}}</b>
   </p>
   <p>

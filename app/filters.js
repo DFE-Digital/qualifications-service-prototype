@@ -46,6 +46,7 @@ addFilter('getFullName', user => {
 addFilter('getShortName', user => {
 
   let names = []
+
   // Prefer DQT Name
   if (user?.dqtUser){
     names.push(user.dqtUser.firstNames)
