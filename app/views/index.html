@@ -24,6 +24,30 @@
 {% endblock %}
 
 {% block content %}
+
+<h2 class="govuk-heading-m">Qual V4 
+  {{govukTag({
+    text: "user research",
+    classes: "govuk-tag--orange"
+  })}}
+</h2>
+
+<p class="govuk-!-font-weight-bold">GOV.UK One Login</p>
+<p><a href='landing-pages/startv4'>Create a new GOV.UK Login + fail TRN match</a></p>
+
+
+{{ govukDetails({
+  summaryText: "V4 Changes include",
+  html: "
+  <p>Simulate use of GOV.UK One Login to sign in (without ID verification) </p>
+  <p>Additional question(s) to match GOV.UK One Login to a teaching record</p>
+  <p>Updates to change your personal details</p>
+  "
+}) }}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
 <h2 class="govuk-heading-m">Qual V3 
   {{govukTag({
     text: "latest design",

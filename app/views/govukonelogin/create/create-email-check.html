@@ -1,0 +1,68 @@
+{% extends "layouts/govukonelogin.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} Check your email
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<form class="form" action="/govukonelogin/create/create-password" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check your email
+      </h1>
+
+      <div class="govuk-inset-text">
+        <p>We have sent an email to:</p>
+        <p><strong> {{ data['createEmail'] }} </strong></p>
+      </div>
+
+      <p>
+        The email contains a 6 digit security code.
+      </p>
+      <p>
+        Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.
+      </p>
+      <p>
+        The code will expire after 2 hours.
+      </p>
+      <p>
+        Enter the 6 digit security code.
+      </p>
+      {{ govukInput({
+        classes: "govuk-input--width-10",
+        id: "email-security-code",
+        name: "emailSecurityCode"
+      }) }}
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Problem with the code?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          We can <a href="">send the code again</a> or you can <a href="/govukonelogin/create-email">use a different email address</a>.
+        </div>
+      </details>
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

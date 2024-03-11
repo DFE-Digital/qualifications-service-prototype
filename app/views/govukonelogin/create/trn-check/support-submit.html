@@ -1,0 +1,34 @@
+{% extends "layouts/govukonelogin-aytq" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – Support requested
+{% endblock %}
+
+{% block content %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Support request submitted",
+        html: "Your reference number<br><strong>HDJ2123F</strong>"
+      }) }}
+
+      <p class="govuk-body">We have sent you a confirmation email.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        We’ve sent your request for support with accessing your teaching qualifications to the helpdesk.
+      </p>
+      <p class="govuk-body">
+        They will contact you either to confirm your login, or to ask for more information.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

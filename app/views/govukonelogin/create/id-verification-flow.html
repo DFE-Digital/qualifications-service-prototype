@@ -1,0 +1,96 @@
+{% extends "layouts/govukonelogin.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<form class="form" action="/govukonelogin/create/id-verification-success" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Prove your identity with GOV.UK One Login
+      </h1>
+
+      <p class="govuk-body">
+        You would now be prompted to prove your identity with GOV.UK One Login, as it is your first time using it.
+      </p>
+      <p class="govuk-body">
+        You would only need to do this once.
+      </p>
+      <p class="govuk-body">
+        You would be asked a series of questions and able to prove your identity in different ways including:
+        <ul class="govuk-list govuk-list--bullet">
+          <li> scanning a biometric passport</li>
+          <li> uploading a document such as a driving licence</li>
+          <li> using the GOV.UK ID check app</li>
+          <li> visiting a post office</li>
+        </ul>
+      </p>
+
+      <h2 class="govuk-heading-m">
+        Your details
+        </h2>
+
+
+      {{ govukInput({
+        label: {
+          text: "Your name",
+          classes: "govuk-label--s"
+        },
+        id: "create-name",
+        name: "createName"
+      }) }}
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+        id: "create-dob",
+        namePrefix: "createDOB",
+        fieldset: {
+          legend: {
+            text: "Date of birth",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 31 3 1980"
+        },
+        items: [
+          {
+            name: "day",
+            classes: "govuk-input--width-2",
+            autocomplete: "bday-day"
+          },
+          {
+            name: "month",
+            classes: "govuk-input--width-2",
+            autocomplete: "bday-month"
+          },
+          {
+            name: "year",
+            classes: "govuk-input--width-4",
+            autocomplete: "bday-year"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

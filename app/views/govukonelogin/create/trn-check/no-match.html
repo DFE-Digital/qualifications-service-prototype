@@ -1,0 +1,32 @@
+{% extends "layouts/govukonelogin-aytq" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – Teacher record not found
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/govukonelogin/create/trn-check/check-answers" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        We haven’t found your teaching record
+      </h1>
+
+      <p>We’ve been unable to match the answers you’ve given to a teaching record.</p>
+
+      <p>Check your answers. If they’re correct, you can get support with accessing your teaching qualifications. We’ll check your details and contact you if we need any more information.</p>
+
+
+      {{ govukButton({
+        text: "Check your answers"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

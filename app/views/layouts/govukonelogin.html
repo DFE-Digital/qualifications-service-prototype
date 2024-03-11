@@ -1,0 +1,75 @@
+{#
+    For guidance on how to use layouts see:
+    https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+    #}
+    
+    {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+    
+    {% set accountLink %}
+    
+    {%- if account == 'true' -%}
+    /user-research/mvp/
+    {%- else -%}
+    /landing-pages/interstitial
+    {%- endif -%}
+    {% endset -%}
+    
+    
+    
+    {% block pageTitle %}
+    GOV.UK One Login
+    {% endblock %}
+    
+    {% block header %}
+    {{ govukHeader({
+    homepageUrl: "#",
+    serviceName: "GOV.UK One Login",
+    serviceUrl: '/',
+    navigation: [
+    {
+    href: accountLink,
+    text: data['dia'],
+    active: true if account == 'true'
+    },
+    {
+    href: "https://get-an-identity-prototype.herokuapp.com/user-research/qual/sign-out",
+    text: "Sign out"
+    }
+    ] if signedIn == 'true'
+    }) }}
+    {{ govukPhaseBanner({
+    tag: {
+    text: "Prototype"
+    },
+    html: 'This is not a live service.',
+    classes: 'govuk-width-container'
+    }) }}
+    {% endblock %}
+    
+    {% block footer %}
+    {{ govukFooter({
+    meta: {
+    items: [
+    {
+    href: "/manage-prototype",
+    text: "Manage your prototype"
+    },
+    {
+    href: "/manage-prototype/clear-data",
+    text: "Clear data"
+    },
+    {
+    href: "/settings",
+    text: "settings"
+    },
+    {
+    href: "/set-user-type?type=employer",
+    text: "Employer referral form"
+    }
+    ]
+    }
+    }) }}
+    
+    {{ data | log }}
+    
+    {% endblock %}

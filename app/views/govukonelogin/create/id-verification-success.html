@@ -1,0 +1,40 @@
+{% extends "layouts/govukonelogin.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<form class="form" action="/govukonelogin/create/trn-check/nino" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Continue to access your teaching qualifications
+      </h1>
+
+      <p class="govuk-body">
+        You've created a GOV.UK One Login and verified your identity.
+      </p>
+      <p class="govuk-body">
+        Continue to access your teaching qualifications.
+      </p>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

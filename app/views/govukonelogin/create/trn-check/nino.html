@@ -1,0 +1,43 @@
+{% extends "layouts/govukonelogin-aytq" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – Tell us your national insurance number
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/govukonelogin/create/trn-check/trn" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        National insurance number
+      </h1>
+
+      <p>Tell us your national insurance number so we can find your teaching record. You won't need to do this again.</p>
+
+      {{ govukInput({
+        label: {
+          text: "National insurance number"
+        },
+        classes: "govuk-input--width-10",
+        id: "match-trn-nino",
+        name: "matchTRNNino"
+      }) }}
+
+      <p class="govuk-body">
+        <a href="/govukonelogin/trn-check/trn" class="govuk-link">I don’t know my national insurance number</a>.
+      </p>
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

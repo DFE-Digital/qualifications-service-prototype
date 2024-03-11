@@ -1,0 +1,108 @@
+{% extends "layouts/govukonelogin-aytq" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – Check your answers
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/govukonelogin/create/trn-check/support-submit" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check your answers
+      </h1>
+
+      <h2 class="govuk-heading-m">
+        GOV.UK One Login details
+      </h2>
+
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Email"
+            },
+            value: {
+              text: data['createEmail']
+            }
+          },
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: data['createName']
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: data['createDOB']
+            }
+          }
+        ]
+      })}}
+
+      <h2 class="govuk-heading-m">
+        Additional details
+      </h2>
+
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "National insurance number"
+      },
+      value: {
+        text: data['matchTRNNino']
+      },
+      actions: {
+        items: [
+          {
+            href: "/govukonelogin/trn-check/nino",
+            text: "Change",
+            visuallyHiddenText: "nino"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Teacher reference number"
+      },
+      value: {
+        text: data['matchTRNTRN']
+      },
+      actions: {
+        items: [
+          {
+            href: "/govukonelogin/trn-check/trn",
+            text: "Change",
+            visuallyHiddenText: "TRN"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+
+      {{ govukButton({
+        text: "Get support"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

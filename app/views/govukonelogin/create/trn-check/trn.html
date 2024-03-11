@@ -1,0 +1,43 @@
+{% extends "layouts/govukonelogin-aytq" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – Tell us your TRN
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/govukonelogin/create/trn-check/no-match" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Teacher reference number (TRN)
+      </h1>
+
+      <p>Tell us your TRN so we can find your teaching record. You won’t need to do this again.</p>
+
+      {{ govukInput({
+        label: {
+          text: "TRN"
+        },
+        classes: "govuk-input--width-10",
+        id: "match-trn-trn",
+        name: "matchTRNTRN"
+      }) }}
+
+      <p class="govuk-body">
+        <a href="/govukonelogin/trn-check-trn" class="govuk-link">I don’t know my national insurance number</a>.
+      </p>
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
