@@ -25,7 +25,7 @@
         rows: [
           {
             key: {
-              text: "Email"
+              text: "Email address"
             },
             value: {
               text: data['createEmail']
@@ -36,7 +36,15 @@
               text: "Name"
             },
             value: {
-              text: data['createName']
+              text: "Victoria Smith"
+            }
+          },
+          {
+            key: {
+              text: "Previous name"
+            },
+            value: {
+              text: "Victoria Harvey"
             }
           },
           {
@@ -44,7 +52,7 @@
               text: "Date of birth"
             },
             value: {
-              text: data['createDOB']
+              text: "14 June 1991"
             }
           }
         ]
@@ -63,12 +71,12 @@
         text: "National insurance number"
       },
       value: {
-        text: data['matchTRNNino']
+        text: data['nino']
       },
       actions: {
         items: [
           {
-            href: "/govukonelogin/trn-check/nino",
+            href: "/govukonelogin/create/trn-check/nino",
             text: "Change",
             visuallyHiddenText: "nino"
           }
@@ -80,12 +88,12 @@
         text: "Teacher reference number"
       },
       value: {
-        text: data['matchTRNTRN']
+        text: data['trn']
       },
       actions: {
         items: [
           {
-            href: "/govukonelogin/trn-check/trn",
+            href: "/govukonelogin/create/trn-check/trn",
             text: "Change",
             visuallyHiddenText: "TRN"
           }

@@ -11,5 +11,16 @@ module.exports = router => {
     })
     
 
+    router.post('/sign-in-auth-answer', function(request, response) {
+
+        var method = request.session.data['authMethod']
+        if (method == "text-message"){
+            response.redirect("/govukonelogin/sign-in/sign-in-check-phone")
+        } else {
+            response.redirect("/govukonelogin/sign-in/sign-in-check-app")
+        }
+    })
+    
+
 
 }

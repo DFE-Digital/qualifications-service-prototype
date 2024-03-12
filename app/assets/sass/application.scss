@@ -48,3 +48,14 @@
 .induction-history .govuk-details{
   margin: 0 
 }
+
+.app-panel--interruption {
+  color: govuk-colour("white");
+  background-color: govuk-colour("blue");
+  text-align: left;
+}
+
+.app-button--inverse {
+  color: govuk-colour("blue");
+  background-color: govuk-colour("white");
+}

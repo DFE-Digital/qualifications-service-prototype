@@ -1,7 +1,7 @@
 {% extends "layouts/govukonelogin.html" %}
 
 {% block pageTitle %}
-{{ serviceName }} Check your email
+{{ serviceName }} Check your phone
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,46 +12,41 @@
 {% endblock %}
 
 {% block content %}
-<form class="form" action="/govukonelogin/create/create-password" method="post">
+<form class="form" action="/yourteachingrecord" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Check your email
+        Check your phone
       </h1>
 
       <div class="govuk-inset-text">
-        <p>We have sent an email to:</p>
-        <p><strong> {{ data['createEmail'] }} </strong></p>
+        <p>We have sent an code to:</p>
+        <p><strong> {{ data['createMobileNumber'] }} </strong></p>
       </div>
 
       <p>
-        The email contains a 6 digit security code.
-      </p>
-      <p>
-        Your email might take a few minutes to arrive. If you do not get an email, check your spam folder.
-      </p>
-      <p>
-        The code will expire after 2 hours.
+        It might take a few minutes to arrive. The code will expire after 2 hours.
       </p>
       <p>
         Enter the 6 digit security code.
       </p>
       {{ govukInput({
         classes: "govuk-input--width-10",
-        id: "email-security-code",
-        name: "emailSecurityCode"
+        id: "sign-in-mobile-security-code",
+        name: "signInSecurityCode"
       }) }}
 
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            Problem with the code?
+            Problems with the code?
           </span>
         </summary>
         <div class="govuk-details__text">
-          We can <a href="">send the code again</a> or you can <a href="/govukonelogin/create/create-email">use a different email address</a>.
+         <p>We can <a href="">send the code again</a> or you can <a href="/govukonelogin/create-success">use a different mobile number</a>.</p> 
+          <p><a href="#">Get a code another way</a>.</p>
         </div>
       </details>
 
