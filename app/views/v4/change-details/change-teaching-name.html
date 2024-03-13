@@ -1,0 +1,95 @@
+{% extends "layouts/v4/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Change your teaching name
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to change your details",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="/v4/change-details/check-your-answers?changeType=teaching-name" method="post">
+
+            <h1 class="govuk-heading-l">
+                Change your name on teaching certificates
+            </h1>
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+            label: {
+            text: "First name",
+            classes: "govuk-label--s"
+            },
+            value: data['first-name'] or "Victoria",
+            id: "first-name",
+            name: "firstName"
+            }) }}
+
+            {{ govukInput({
+            label: {
+            text: "Middle name",
+            classes: "govuk-label--s"
+            },
+            value: data['middle-name'],
+            id: "middle-name",
+            name: "middleName"
+            }) }}
+
+            {{ govukInput({
+            label: {
+            text: "Last name",
+            classes: "govuk-label--s"
+            },
+            value: data['last-name'] or "Smith",
+            id: "last-name",
+            name: "lastName"
+            }) }}
+
+            {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+            <h2 class="govuk-heading-s">
+                Upload evidence
+            </h2>
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Documents we accept
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>marriage certificate</li>
+                        <li>civil partnership certificate</li>
+                        <li>decree absolute and birth certificate</li>
+                        <li>statutory declaration</li>
+                        <li>deed poll</li>
+                    </ul>
+                </div>
+            </details>
+
+            {{ govukFileUpload({
+            id: "id-proof",
+            name: "idProof"
+            }) }}
+
+            {{ govukButton({
+            text: "Continue"
+            }) }}
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

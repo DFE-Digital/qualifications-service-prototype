@@ -1,4 +1,4 @@
-{% extends "layouts/forms.html" %}
+{% extends "layouts/v4/qualifications.html" %}
 {% set title = 'Teaching qualifications' %}
 
 
@@ -6,7 +6,7 @@
 
 {% set user = data.user %}
 {% if not data.user %}
-  {% set user = {firstNames: 'Adam', lastNames: 'Culpan' } %}
+  {% set user = {firstNames: 'Victoria', lastNames: 'Smith' } %}
 {% endif %}
 
 
@@ -23,37 +23,38 @@
 {% block form %}
 
 
+
   {% if data['mvp'] == 'false' %}
       <!-- npq executive -->
-      {% include 'includes/qualifications/_npq-executive.html' %}
+      {% include 'includes/v4/qualifications/_npq-executive.html' %}
       <!-- npw headteacher -->
-      {% include 'includes/qualifications/_npq-headteacher.html' %}
+      {% include 'includes/v4/qualifications/_npq-headteacher.html' %}
       <!-- MQ -->
-      {% include 'includes/qualifications/_mq.html' %}
+      {% include 'includes/v4/qualifications/_mq.html' %}
       <!-- Early years -->
-      {% include 'includes/qualifications/_eyts.html' %}
+      {% include 'includes/v4/qualifications/_eyts.html' %}
       <!-- Induction -->
-      {% include 'includes/qualifications/_induction.html' %}
+      {% include 'includes/v4/qualifications/_induction.html' %}
       <!-- QTS -->
-      {% include 'includes/qualifications/_qts.html' %}
+      {% include 'includes/v4/qualifications/_qts.html' %}
       <!-- ITT -->
-      {% include 'includes/qualifications/_itt.html' %}
+      {% include 'includes/v4/qualifications/_itt.html' %}
 
      {% elseif data['mvp'] == 'true' or data['mvp'] != 'true' %}
       <!-- MQ -->
-      {% include 'includes/qualifications/_mq.html' %}
+      {% include 'includes/v4/qualifications/_mq.html' %}
       <!-- Induction -->
-      {% include 'includes/qualifications/_induction.html' %}
+      {% include 'includes/v4/qualifications/_induction.html' %}
       <!-- QTS -->
-      {% include 'includes/qualifications/_qts.html' %}
+      {% include 'includes/v4/qualifications/_qts.html' %}
       <!-- ITT -->
-      {% include 'includes/qualifications/_itt.html' %}
+      {% include 'includes/v4/qualifications/_itt.html' %}
 
     {% elseif data['mvp'] == 'induction' %}
       <!-- Induction -->
-      {% include 'includes/qualifications/_induction.html' %}
+      {% include 'includes/v4/qualifications/_induction.html' %}
       <!-- Induction exempt-->
-      {% include 'includes/qualifications/_induction-others.html' %}
+      {% include 'includes/v4/qualifications/_induction-others.html' %}
     {% endif %}
 
 

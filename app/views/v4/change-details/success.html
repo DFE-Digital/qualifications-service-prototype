@@ -1,0 +1,42 @@
+{% extends "layouts/v4/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Change your teaching name
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to change your teaching qualifications",
+href: "/landing-pages/v4/qualifications"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+      {% if data['changeType'] == "name" %}  
+
+        {{ govukPanel({
+          titleText: "Name change request submitted",
+          html: "Your reference number<br><strong>HDJ2123F</strong>"
+        }) }}
+
+      {% endif %}
+
+      <p class="govuk-body">We have sent you a confirmation email.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">We’ll check the evidence you submitted. We’ll contact you if we need any more information.</p>
+
+
+    </div>
+
+</div>
+
+
+{% endblock %}

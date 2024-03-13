@@ -1,0 +1,48 @@
+{% extends "layouts/v4/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Change your mobile number
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to change your details",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="/landing-pages/v4/teacher-record-details?changeType=mobile-number" method="post">
+
+            <h1 class="govuk-heading-l">
+                Change your mobile number
+            </h1>
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+            label: {
+            text: "Mobile number",
+            classes: "govuk-label--s"
+            },
+            value: data['createMobileNumber'],
+            id: "create-mobile-number",
+            name: "createMobileNumber"
+            }) }}
+
+            
+            {{ govukButton({
+            text: "Change mobile number"
+            }) }}
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layouts/v4/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Change your preferred name
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to change your details",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="/landing-pages/v4/teacher-record-details?changeType=preferred-name" method="post">
+
+            <h1 class="govuk-heading-l">
+                Change your preferred name
+            </h1>
+
+            <p class="govuk-body">This doesn’t change the name on your certificates but we’ll use it in when you’re contacted by teacher services.</p>
+
+            <p class="govuk-body">This doesn’t affect any other government services.</p>
+
+            {% from "govuk/components/input/macro.njk" import govukInput %}
+
+            {{ govukInput({
+            label: {
+            text: "Preferred name",
+            classes: "govuk-label--s"
+            },
+            value: data['preferredName'],
+            id: "preferred-name",
+            name: "preferredName"
+            }) }}
+
+            
+            {{ govukButton({
+            text: "Change name"
+            }) }}
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}

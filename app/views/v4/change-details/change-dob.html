@@ -1,0 +1,72 @@
+{% extends "layouts/v4/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Change your date of birth
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to change your details",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" action="/v4/change-details/check-your-answers?changeType=dob" method="post">
+
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+            {{ govukDateInput({
+              id: "changeDOB",
+              namePrefix: "changeDOB",
+              fieldset: {
+                legend: {
+                  text: "Change your date of birth",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              }
+            }) }}
+           
+
+            {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
+
+            <h2 class="govuk-heading-s">
+                Upload evidence
+            </h2>
+
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Documents we accept
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li>tbc</li>
+                    </ul>
+                </div>
+            </details>
+
+            {{ govukFileUpload({
+            id: "dob-proof",
+            name: "dobProof"
+            }) }}
+
+            {{ govukButton({
+            text: "Continue"
+            }) }}
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
