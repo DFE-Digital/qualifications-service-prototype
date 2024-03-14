@@ -1,7 +1,5 @@
 {% extends "layouts/main.html" %}
 
-
-
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -13,59 +11,60 @@
 
     </div>
 
+    <div class="govuk-grid-column-two-thirds">
 
+        <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+                From: <a class="govuk-!-font-weight-bold"
+                    href="https://www.gov.uk/government/organisations/teaching-regulation-agency">Regulation Agency</a>
+            </li>
+            <li>
+                Published 11 September 2022
+            </li>
 
-
-<div class="govuk-grid-column-two-thirds">
-
-    <ul class="govuk-list govuk-!-font-size-16">
-        <li>
-            From: <a class="govuk-!-font-weight-bold" href="https://www.gov.uk/government/organisations/teaching-regulation-agency">Regulation Agency</a>
-        </li>
-        <li>
-            Published 11 September 2022
-        </li>
-
-    </ul>
-
-
-     <p class="govuk-body">
-        Qualified teachers can use this service to:
-    </p>
-    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
-      <li>
-        download your teaching certificates
-    </li>
-    <li>
-        change the name on your teaching certificates
-    </li>
-    <li>
-        check your qualification status
-    </li>
-    <li>
-        check your early career teacher induction status
-    </li>
-
-</ul>
-    <section class="gem-c-devolved-nations govuk-!-margin-bottom-8"">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-0">
-            This service is for qualified teachers in England
-        </h2>
-        <ul class="govuk-list govuk-!-margin-top-1 govuk-!-margin-bottom-0">
-            <li><a class="govuk-link" href="https://www.ewc.wales/site/index.php/en/registration/applying-for-registration.html">Teachers in Wales</a></li>
-            <li><a class="govuk-link" href="https://www.gtcs.org.uk/GTCS-login.aspx">Teachers in  Scotland</a></li>
         </ul>
-    </section>
-    <h1 class="govuk-heading-m">Before you start</h1>
 
-    <p>You’ll need to create a DfE Identity account to access your teaching qualifications. You'll use the account to sign-in to this service and other DfE teaching services.</p>
+        <p class="govuk-body">
+            Qualified teachers can use this service to:
+        </p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+            <li>
+                download your teaching certificates
+            </li>
+            <li>
+                change the name on your teaching certificates
+            </li>
+            <li>
+                check your qualification status
+            </li>
+            <li>
+                check your early career teacher induction status
+            </li>
 
-    {{ govukButton({
+        </ul>
+        <section class="gem-c-devolved-nations govuk-!-margin-bottom-8"">
+        <h2 class=" govuk-heading-s govuk-!-margin-bottom-0">
+            This service is for qualified teachers in England
+            </h2>
+            <ul class="govuk-list govuk-!-margin-top-1 govuk-!-margin-bottom-0">
+                <li><a class="govuk-link"
+                        href="https://www.ewc.wales/site/index.php/en/registration/applying-for-registration.html">Teachers
+                        in Wales</a></li>
+                <li><a class="govuk-link" href="https://www.gtcs.org.uk/GTCS-login.aspx">Teachers in Scotland</a></li>
+            </ul>
+        </section>
+        <h1 class="govuk-heading-m">Before you start</h1>
+
+        <p>You’ll need to create a DfE Identity account to access your teaching qualifications. You'll use the account
+            to sign-in to this service and other DfE teaching services.</p>
+
+        {{ govukButton({
         text: "Start now",
-        href: "https://get-an-identity-prototype.herokuapp.com/qualifications/ga-account?onwardContinue=Access your teaching qualifications",
+        href: "https://get-an-identity-prototype.herokuapp.com/qualifications/ga-account?onwardContinue=Access your
+        teaching qualifications",
         isStartButton: true
-    }) }}
-  </div>
+        }) }}
+    </div>
 
     <div class="govuk-grid-column-one-third">
         <div class="gem-c-related-navigation govuk-!-margin-bottom-8">
@@ -73,25 +72,30 @@
             <h2 class="govuk-heading-s ">Related content</h2>
             <ul class="govuk-list govuk-!-font-size-16 govuk-list--spaced ">
                 <li>
-                    <a href="https://www.gov.uk/guidance/teacher-reference-number-trn">Teacher reference number (TRN)</a>
+                    <a href="https://www.gov.uk/guidance/teacher-reference-number-trn">Teacher reference number
+                        (TRN)</a>
                 </li>
                 <li>
-                    <a href="https://www.gov.uk/guidance/early-career-payments-guidance-for-teachers-and-schools">Early-career payments for teachers</a>
+                    <a href="https://www.gov.uk/guidance/early-career-payments-guidance-for-teachers-and-schools">Early-career
+                        payments for teachers</a>
                 </li>
                 <li>
-                    <a href="https://www.gov.uk/guidance/qualified-teacher-status-qts">Qualified teacher status (QTS): qualify to teach in England</a>
+                    <a href="https://www.gov.uk/guidance/qualified-teacher-status-qts">Qualified teacher status (QTS):
+                        qualify to teach in England</a>
                 </li>
                 <li>
-                    <a href="https://www.gov.uk/guidance/teacher-status-checks-information-for-employers">Teacher status checks: information for employers</a>
+                    <a href="https://www.gov.uk/guidance/teacher-status-checks-information-for-employers">Teacher status
+                        checks: information for employers</a>
                 </li>
                 <li>
-                    <a href="https://www.gov.uk/guidance/levelling-up-premium-payments-for-teachers">Levelling up premium payments for teachers</a>
+                    <a href="https://www.gov.uk/guidance/levelling-up-premium-payments-for-teachers">Levelling up
+                        premium payments for teachers</a>
                 </li>
             </ul>
-            </div>
         </div>
+    </div>
 
- </div>
+</div>
 
 
 {% endblock %}

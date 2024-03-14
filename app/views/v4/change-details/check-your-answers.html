@@ -18,7 +18,7 @@ href: "javascript:window.history.back()"
 
         {% if data['changeType'] == 'teaching-name' %}
 
-        <form class="form" action="/v4/change-details/success?changeType=name" method="post">
+        <form class="form" action="/v4/change-details/success?nameChange=pending" method="post">
 
             <h1 class="govuk-heading-l">
                 Confirm change
@@ -67,6 +67,12 @@ href: "javascript:window.history.back()"
 
             {% elseif data['changeType'] == 'dob' %}
 
+            <form class="form" action="/v4/change-details/success?dobChange=pending" method="post">
+
+                <h1 class="govuk-heading-l">
+                    Confirm change
+                </h1>
+
             {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
             {{ govukSummaryList({
@@ -76,7 +82,7 @@ href: "javascript:window.history.back()"
             text: "Date of birth"
             },
             value: {
-                text: data| isoDateFromDateInput("changeDOB") | govukDate 
+                text: data| isoDateFromDateInput("changedob") | govukDate 
               },
             actions: {
             items: [

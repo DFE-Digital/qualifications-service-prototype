@@ -20,11 +20,9 @@ href: "javascript:window.history.back()"
 
             {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
-            {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-
             {{ govukDateInput({
-              id: "changeDOB",
-              namePrefix: "changeDOB",
+              id: "changedob",
+              namePrefix: "changedob",
               fieldset: {
                 legend: {
                   text: "Change your date of birth",
@@ -33,7 +31,6 @@ href: "javascript:window.history.back()"
                 }
               }
             }) }}
-           
 
             {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}
 

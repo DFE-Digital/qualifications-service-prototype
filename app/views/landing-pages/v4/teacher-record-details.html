@@ -15,9 +15,6 @@
 {% if data['changeType'] == 'preferred-name' %}
 
 {% set html %}
-  <h3 class="govuk-notification-banner__heading">
-    Success
-  </h3>
   <p class="govuk-body">Your preferred name has been updated.</p>
 {% endset %}
 
@@ -29,9 +26,6 @@
 {% elseif data['changeType'] == 'mobile-number' %}
 
 {% set html %}
-  <h3 class="govuk-notification-banner__heading">
-    Success
-  </h3>
   <p class="govuk-body">Your mobile number has been updated.</p>
 {% endset %}
 
@@ -61,7 +55,7 @@
               <dt class="govuk-summary-list__key">
                 Name on certificates
 
-                {% if data['nameChange'] == "yes" %}
+                {% if data['nameChange'] == "pending" %}
                 
                 {%- from "govuk/components/tag/macro.njk" import govukTag -%}
                     {{ govukTag({
@@ -83,7 +77,7 @@
                 Preferred name
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['preferredName'] }}
+                {{ data['preferredName'] or "None" }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/v4/change-details/change-preferred-name?changeType=new">Change<span class="govuk-visually-hidden"> preferred name/span></a>
@@ -94,7 +88,7 @@
                 Mobile phone
               </dt>
               <dd class="govuk-summary-list__value">
-                {{ data['createMobileNumber'] }}
+                {{ data['createMobileNumber'] or "07987654321" }}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="/v4/change-details/change-mobile-number?changeType=new">Change<span class="govuk-visually-hidden"> address</span></a>
@@ -103,6 +97,16 @@
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Date of birth
+
+                {% if data['dobChange'] == "pending" %}
+                
+                {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+                    {{ govukTag({
+                    text: "Pending review",
+                    classes: "govuk-tag--yellow govuk-!-margin-2"
+                    }) }}  
+                {% endif %}
+
               </dt>
               <dd class="govuk-summary-list__value">
                 <p class="govuk-body">{{ data['changeDOB'] or "14 June 1991" }}</p>
@@ -110,7 +114,7 @@
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
                   <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="/v4/change-details/change-dob">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+                    <a class="govuk-link" href="/v4/change-details/change-dob?changeType="new">Change<span class="govuk-visually-hidden"> date of birth</span></a>
                   </li>
                 </ul>
               </dd>

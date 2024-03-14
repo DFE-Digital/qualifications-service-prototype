@@ -7,7 +7,7 @@
 {% block beforeContent %}
 {{ govukBackLink({
 text: "Back to change your teaching qualifications",
-href: "/landing-pages/v4/qualifications"
+href: "/landing-pages/v4/teacher-record-details"
 }) }}
 {% endblock %}
 
@@ -18,10 +18,17 @@ href: "/landing-pages/v4/qualifications"
 
       {% from "govuk/components/panel/macro.njk" import govukPanel %}
 
-      {% if data['changeType'] == "name" %}  
+      {% if data['changeType'] == 'teaching-name' %}  
 
         {{ govukPanel({
           titleText: "Name change request submitted",
+          html: "Your reference number<br><strong>HDJ2123F</strong>"
+        }) }}
+
+        {% elseif data['changeType'] == "dob" %}  
+
+        {{ govukPanel({
+          titleText: "Date of birth change request submitted",
           html: "Your reference number<br><strong>HDJ2123F</strong>"
         }) }}
 
