@@ -1,6 +1,10 @@
 {% extends "layouts/govukonelogin.html" %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
+{% block pageTitle %}
+Create a GOV.UK One Login or sign in - {{ serviceName }}
+{% endblock %}
+
 {% block beforeContent %}
 <a class="govuk-back-link" href="javascript:window.history.back()">Back to Access your teaching qualifications</a>
 {% endblock %}
@@ -44,8 +48,10 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        <p>GOV.UK One Login is new. At the moment you can only use your GOV.UK One Login to access some government services.</p>
-        <p>It does not work with all government accounts or services yet (for example Government Gateway or Universal Credit).</p>
+        <p>GOV.UK One Login is new. At the moment you can only use your GOV.UK One Login to access some government
+          services.</p>
+        <p>It does not work with all government accounts or services yet (for example Government Gateway or Universal
+          Credit).</p>
         <p>In the future, you’ll be able to use GOV.UK One Login to access all services on GOV.UK.</p>
       </div>
     </details>

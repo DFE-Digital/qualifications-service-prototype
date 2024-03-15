@@ -1,13 +1,13 @@
 {% extends "layouts/govukonelogin.html" %}
 
 {% block pageTitle %}
-{{ serviceName }} Check your email
+Check your email - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
 }) }}
 {% endblock %}
 
@@ -39,9 +39,9 @@
         Enter the 6 digit security code.
       </p>
       {{ govukInput({
-        classes: "govuk-input--width-10",
-        id: "email-security-code",
-        name: "emailSecurityCode"
+      classes: "govuk-input--width-10",
+      id: "email-security-code",
+      name: "emailSecurityCode"
       }) }}
 
       <details class="govuk-details">
@@ -51,18 +51,19 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          We can <a href="">send the code again</a> or you can <a href="/govukonelogin/create/create-email">use a different email address</a>.
+          We can <a href="">send the code again</a> or you can <a href="/govukonelogin/create/create-email">use a
+            different email address</a>.
         </div>
       </details>
 
 
       {{ govukButton({
-        text: "Continue"
+      text: "Continue"
       }) }}
 
-      </form>
+</form>
 
-    </div>
-  </div>
+</div>
+</div>
 
 {% endblock %}

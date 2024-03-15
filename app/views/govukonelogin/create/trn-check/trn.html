@@ -1,28 +1,28 @@
 {% extends "layouts/govukonelogin-aytq" %}
 
 {% block pageTitle %}
-  {{ serviceName }} – Tell us your national insurance number
+Do you have a teacher reference number (TRN)? - {{ serviceName }}
 {% endblock %}
 
 {% block content %}
 
-<form class="form" action="/govukonelogin/create/trn-check/no-match" method="post">
+<form class="form" action="/govukonelogin/create/trn-check/check-answers" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       {% set trnYes %}
-{{ govukInput({
-  id: "trn",
-  name: "trn",
-  spellcheck: false,
-  classes: "govuk-input--width-20",
-  label: {
-    text: "TRN"
-  },
-  value: data['trn']
-}) }}
-{% endset -%}
+      {{ govukInput({
+      id: "trn",
+      name: "trn",
+      spellcheck: false,
+      classes: "govuk-input--width-20",
+      label: {
+      text: "TRN"
+      },
+      value: data['trn']
+      }) }}
+      {% endset -%}
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -39,7 +39,7 @@
       {
       text: "Yes",
       conditional: {
-        html: trnYes
+      html: trnYes
       }
       },
       {
@@ -58,7 +58,7 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p class="govuk-body">  You’ll have a TRN if you:</p>
+          <p class="govuk-body"> You’ll have a TRN if you:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>hold qualified teacher status (QTS) in England or Wales</li>
             <li>hold early years teacher status (EYTS) in England</li>
@@ -66,21 +66,24 @@
             <li>are working towards QTS or a EYTS</li>
           </ul>
           <p class="govuk-body">
-            <a href="https://www.gov.uk/guidance/teacher-reference-number-trn#request-a-trn-if-youre-an-early-years-professional-or-mentor-for-an-early-career-teacher" class="govuk-link">Learn about TRNs</a> including how to request one, or <a href="https://find-a-lost-trn.education.gov.uk/start" class="govuk-link">find a lost TRN</a>.
+            <a href="https://www.gov.uk/guidance/teacher-reference-number-trn#request-a-trn-if-youre-an-early-years-professional-or-mentor-for-an-early-career-teacher"
+              class="govuk-link">Learn about TRNs</a> including how to request one, or <a
+              href="https://find-a-lost-trn.education.gov.uk/start" class="govuk-link">find a lost TRN</a>.
           </p>
           <p class="govuk-body">
-            You may not have one yet if you work in early years, further education or qualified as a teacher outside of England."
+            You may not have one yet if you work in early years, further education or qualified as a teacher outside of
+            England.
           </p>
         </div>
       </details>
 
       {{ govukButton({
-        text: "Continue"
+      text: "Continue"
       }) }}
 
-      </form>
+</form>
 
-    </div>
-  </div>
+</div>
+</div>
 
 {% endblock %}

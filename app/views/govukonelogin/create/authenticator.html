@@ -1,7 +1,7 @@
 {% extends "layouts/govukonelogin.html" %}
 
 {% block pageTitle %}
-{{ serviceName }} Set up an authenticator app
+Set up an authenticator app - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,66 +20,68 @@ href: "javascript:window.history.back()"
 
       <h1 class="govuk-heading-l">
         Set up an authenticator app
-    </h1>
-
-    <div class="govuk-form-group">
-
-      <ol class="govuk-list govuk-list--number">
-        <li>Open your authenticator app on your smartphone, tablet or computer.</li>
-        <br>
-        <details class="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              I don't have an authenticator app
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-           <p>You can download an authenticator app for your smartphone or tablet from your app store.</p> 
-            <p>If you don’t have a smartphone or tablet, search online for an authenticator app for your computer.</p>
-            <p>You can use any authenticator app.</p>
-          </div>
-        </details>
-        <li>Use the authenticator app to scan the QR code.
-          <br><br>
-          <div class="govuk-!-display-block govuk-!-text-align-centre">
-          <img src="/public/images/authenticator_qr.png" alt="QR code" width="25%" display="block" margin-left="auto" margine-right="auto">
-          </div>
-          <br>
-        <details class="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              I cannot scan the QR code
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-           <p>You can enter the secret key into your authenticator app instead.</p> 
-            <p>Secret key:
-              QWMA HC7F SZQW YIJJ RRIT X64U KCSS OHSK</p>
-            <p>Some authenticator apps call the secret key a ‘code’.</p>
-          </div>
-        </details>
-        </li>
-        <li>The authenticator app will show a security code.</li>
-        <li>Enter the security code.</li>
-      </ol>
+      </h1>
 
       <div class="govuk-form-group">
-        <h2 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--body" for="auth-security-code">
-            Security code
-          </label>
-        </h2>
-        <div id="account-number-hint" class="govuk-hint">
-          This is the 6-digit number shown in your authenticator app
-        </div>
-        <input class="govuk-input govuk-input--width-10" id="auth-security-code" name="authSecurityCode" type="text" spellcheck="false" inputmode="numeric">
-      </div>
-      <br>
-      <br>
 
-      {{ govukButton({
-      text: "Continue"
-      }) }}
+        <ol class="govuk-list govuk-list--number">
+          <li>Open your authenticator app on your smartphone, tablet or computer.</li>
+          <br>
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                I don't have an authenticator app
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>You can download an authenticator app for your smartphone or tablet from your app store.</p>
+              <p>If you don’t have a smartphone or tablet, search online for an authenticator app for your computer.</p>
+              <p>You can use any authenticator app.</p>
+            </div>
+          </details>
+          <li>Use the authenticator app to scan the QR code.
+            <br><br>
+            <div class="govuk-!-display-block govuk-!-text-align-centre">
+              <img src="/public/images/authenticator_qr.png" alt="QR code" width="25%" display="block"
+                margin-left="auto" margine-right="auto">
+            </div>
+            <br>
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  I cannot scan the QR code
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>You can enter the secret key into your authenticator app instead.</p>
+                <p>Secret key:
+                  QWMA HC7F SZQW YIJJ RRIT X64U KCSS OHSK</p>
+                <p>Some authenticator apps call the secret key a ‘code’.</p>
+              </div>
+            </details>
+          </li>
+          <li>The authenticator app will show a security code.</li>
+          <li>Enter the security code.</li>
+        </ol>
+
+        <div class="govuk-form-group">
+          <h2 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--body" for="auth-security-code">
+              Security code
+            </label>
+          </h2>
+          <div id="account-number-hint" class="govuk-hint">
+            This is the 6-digit number shown in your authenticator app
+          </div>
+          <input class="govuk-input govuk-input--width-10" id="auth-security-code" name="authSecurityCode" type="text"
+            spellcheck="false" inputmode="numeric">
+        </div>
+        <br>
+        <br>
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
 
     </form>
 

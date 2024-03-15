@@ -73,55 +73,55 @@ href: "javascript:window.history.back()"
                     Confirm change
                 </h1>
 
-            {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+                {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-            {{ govukSummaryList({
-            rows: [
-            {
-            key: {
-            text: "Date of birth"
-            },
-            value: {
-                text: data| isoDateFromDateInput("changedob") | govukDate 
-              },
-            actions: {
-            items: [
-            {
-            href: "/v4/change-details/change-dob",
-            text: "Change",
-            visuallyHiddenText: "name"
-            }
-            ]
-            }
-            },
-            {
-            key: {
-            text: "Evidence"
-            },
-            value: {
-            text: data['idProof']
-            },
-            actions: {
-            items: [
-            {
-            href: "/v4/change-details/change-teaching-name",
-            text: "Change",
-            visuallyHiddenText: "evidence"
-            }
-            ]
-            }
-            }
-            ]
-            }) }}
+                {{ govukSummaryList({
+                rows: [
+                {
+                key: {
+                text: "Date of birth"
+                },
+                value: {
+                text: data| isoDateFromDateInput("changedob") | govukDate
+                },
+                actions: {
+                items: [
+                {
+                href: "/v4/change-details/change-dob",
+                text: "Change",
+                visuallyHiddenText: "name"
+                }
+                ]
+                }
+                },
+                {
+                key: {
+                text: "Evidence"
+                },
+                value: {
+                text: data['idProof']
+                },
+                actions: {
+                items: [
+                {
+                href: "/v4/change-details/change-teaching-name",
+                text: "Change",
+                visuallyHiddenText: "evidence"
+                }
+                ]
+                }
+                }
+                ]
+                }) }}
 
 
-            {% endif %}
+                {% endif %}
 
-            {{ govukButton({
+                {{ govukButton({
                 text: "Continue"
                 }) }}
 
-        </form>
+            </form>
 
     </div>
 

@@ -1,13 +1,13 @@
 {% extends "layouts/v4/main.html" %}
 
 {% block pageTitle %}
-{{ serviceName }} – Change your details
+Change your details - {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back to your teaching qualifications",
-  href: "/landing-pages/v4/qualifications?changeType=none"
+{{ govukBackLink({
+text: "Back to your teaching qualifications",
+href: "/landing-pages/v4/qualifications?changeType=none"
 }) }}
 
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
@@ -15,150 +15,153 @@
 {% if data['changeType'] == 'preferred-name' %}
 
 {% set html %}
-  <p class="govuk-body">Your preferred name has been updated.</p>
+<p class="govuk-body">Your preferred name has been updated.</p>
 {% endset %}
 
 {{ govukNotificationBanner({
-  html: html,
-  type: "success"
+html: html,
+type: "success"
 }) }}
 
 {% elseif data['changeType'] == 'mobile-number' %}
 
 {% set html %}
-  <p class="govuk-body">Your mobile number has been updated.</p>
+<p class="govuk-body">Your mobile number has been updated.</p>
 {% endset %}
 
 {{ govukNotificationBanner({
-  html: html,
-  type: "success"
+html: html,
+type: "success"
 }) }}
 
 {% endif %}
-
 
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">
-            Change your teaching record details
-        </h1>
+    <h1 class="govuk-heading-l">
+      Change your teaching record details
+    </h1>
 
-        <p class="govuk-body">You’ll need  to provide evidence to change the name on your teaching certificates or date of birth.</p>
+    <p class="govuk-body">You’ll need to provide evidence to change the name on your teaching certificates or date of
+      birth.</p>
 
-        <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Name on certificates
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name on certificates
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['firstName'] + " " + data['lastName'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {% if data['nameChange'] == "pending" %}
 
-                {% if data['nameChange'] == "pending" %}
-                
-                {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-                    {{ govukTag({
-                    text: "Pending review",
-                    classes: "govuk-tag--yellow govuk-!-margin-2"
-                    }) }}  
-                {% endif %}
+          {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+          {{ govukTag({
+          text: "In review",
+          classes: "govuk-tag--yellow govuk-!-margin-2"
+          }) }}
+          {% else %}
+          <a class="govuk-link" href="/v4/change-details/change-teaching-name?changeType=new">Change<span
+              class="govuk-visually-hidden"> name on certificates</span></a>
+          {% endif %}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Preferred name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['preferredName'] or "None" }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/v4/change-details/change-preferred-name?changeType=new">Change<span
+              class="govuk-visually-hidden"> preferred name/span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mobile phone
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['createMobileNumber'] or "07987654321" }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/v4/change-details/change-mobile-number?changeType=new">Change<span
+              class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">{{ data['changeDOB'] or "14 June 1991" }}</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              {% if data['dobChange'] == "pending" %}
 
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['firstName'] + " " + data['lastName'] }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v4/change-details/change-teaching-name?changeType=new">Change<span class="govuk-visually-hidden"> name on certificates</span></a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Preferred name
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['preferredName'] or "None" }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v4/change-details/change-preferred-name?changeType=new">Change<span class="govuk-visually-hidden"> preferred name/span></a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Mobile phone
-              </dt>
-              <dd class="govuk-summary-list__value">
-                {{ data['createMobileNumber'] or "07987654321" }}
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="/v4/change-details/change-mobile-number?changeType=new">Change<span class="govuk-visually-hidden"> address</span></a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Date of birth
-
-                {% if data['dobChange'] == "pending" %}
-                
-                {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-                    {{ govukTag({
-                    text: "Pending review",
-                    classes: "govuk-tag--yellow govuk-!-margin-2"
-                    }) }}  
-                {% endif %}
-
-              </dt>
-              <dd class="govuk-summary-list__value">
-                <p class="govuk-body">{{ data['changeDOB'] or "14 June 1991" }}</p>
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <ul class="govuk-summary-list__actions-list">
-                  <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="/v4/change-details/change-dob?changeType="new">Change<span class="govuk-visually-hidden"> date of birth</span></a>
-                  </li>
-                </ul>
-              </dd>
-            </div>
-          </dl>
-
-          <h2 class="govuk-heading-m">
-            GOV.UK One Login
-        </h2>
-
-        <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Name 
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Victoria Smith
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Date of birth
-              </dt>
-              <dd class="govuk-summary-list__value">
-                14 June 1991
-              </dd>
-            </div>
-          </dl>
-        
-          <p class="govuk-body">You use your GOV.UK One Login to sign in to Access your teaching qualifications.</p>
-
-          <p class="govuk-body">You can change these details in your GOV.UK One Login:</p>
-
-          <ul class="govuk-list govuk-list--bullet">
-            <li>email address</li>
-            <li>password</li>
-            <li>how you get security codes to sign in</li>
+              {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+              {{ govukTag({
+              text: "In review",
+              classes: "govuk-tag--yellow govuk-!-margin-2"
+              }) }}
+              {% else %}
+              <a class="govuk-link" href="/v4/change-details/change-dob?changeType=" new">Change<span
+                  class="govuk-visually-hidden"> date of birth</span></a>
+              {% endif %}
+            </li>
           </ul>
+        </dd>
+      </div>
+    </dl>
 
-          <p class="govuk-body">
-            <a href="https://home.account.gov.uk" class="govuk-link">Change your sign in details in your GOV.UK One login </a>.
-          </p>
+    <h2 class="govuk-heading-m">
+      GOV.UK One Login
+    </h2>
 
-    </div>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Victoria Smith
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          14 June 1991
+        </dd>
+      </div>
+    </dl>
+
+    <p class="govuk-body">You use your GOV.UK One Login to sign in to Access your teaching qualifications.</p>
+
+    <p class="govuk-body">You can change these details in your GOV.UK One Login:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>email address</li>
+      <li>password</li>
+      <li>how you get security codes to sign in</li>
+    </ul>
+
+    <p class="govuk-body">
+      <a href="https://home.account.gov.uk" class="govuk-link">Change your sign in details in your GOV.UK One login
+      </a>.
+    </p>
+
+  </div>
 
 </div>
 

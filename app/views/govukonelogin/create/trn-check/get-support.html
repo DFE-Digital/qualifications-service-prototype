@@ -1,0 +1,37 @@
+{% extends "layouts/govukonelogin-aytq" %}
+
+{% block pageTitle %}
+We haven’t found your teaching record - {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/govukonelogin/create/trn-check/support-submit" method="post">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-panel app-panel--interruption">
+      <h1 class="govuk-panel__title">
+        Your GOV.UK One Login could not be connected to your teaching record
+      </h1>
+      <div class="govuk-panel__body" style="font-size:24px">
+        You need to get support to access your teaching qualifications.
+        <br>
+        <br>
+        Your details will be sent to the Teaching Regulation Agency support team.
+        <br>
+        <br>
+      </div>
+
+      <button class="govuk-button app-button--inverse">
+        Get support
+      </button>
+    </div>
+
+  </div>
+
+</form>
+
+</div>
+
+{% endblock %}

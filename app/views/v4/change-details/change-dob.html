@@ -21,15 +21,15 @@ href: "javascript:window.history.back()"
             {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
             {{ govukDateInput({
-              id: "changedob",
-              namePrefix: "changedob",
-              fieldset: {
-                legend: {
-                  text: "Change your date of birth",
-                  isPageHeading: true,
-                  classes: "govuk-fieldset__legend--l"
-                }
-              }
+            id: "changedob",
+            namePrefix: "changedob",
+            fieldset: {
+            legend: {
+            text: "Change your date of birth",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+            }
+            }
             }) }}
 
             {% from "govuk/components/file-upload/macro.njk" import govukFileUpload %}

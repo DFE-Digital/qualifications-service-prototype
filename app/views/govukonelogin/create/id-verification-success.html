@@ -1,40 +1,35 @@
 {% extends "layouts/govukonelogin.html" %}
 
 {% block pageTitle %}
-  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+Continue to the service you want to use – {{ serviceName }}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
 
 {% block content %}
-<form class="form" action="/govukonelogin/create/trn-check/find-interruption" method="post">
+<form class="form" action="/govukonelogin/create/trn-check/connect-interruption" method="post">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Continue to Access your teaching qualifications
+        Continue to the service you want to use
       </h1>
 
       <p class="govuk-body">
-        You've successfully proved your identity. You can now continue to Access your teaching qualifications.
+        You've successfully proved your identity. You can now continue to the service you want to use.
       </p>
       <p class="govuk-body">
-        Some of the information you shared when you proved your identity might be used to automatically fill in forms within the service.
+        Some of the information you shared when you proved your identity might be used to automatically fill in forms
+        within the service.
       </p>
 
       {{ govukButton({
-        text: "Continue"
+      text: "Continue"
       }) }}
 
-      </form>
+</form>
 
-    </div>
-  </div>
+</div>
+</div>
 
 {% endblock %}

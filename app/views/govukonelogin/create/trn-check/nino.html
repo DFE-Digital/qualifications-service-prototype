@@ -1,7 +1,7 @@
 {% extends "layouts/govukonelogin-aytq" %}
 
 {% block pageTitle %}
-  {{ serviceName }} – Tell us your national insurance number
+Do you have a National insurance number? - {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -12,17 +12,17 @@
     <div class="govuk-grid-column-two-thirds">
 
       {% set ninoYes %}
-{{ govukInput({
-  id: "nino",
-  name: "nino",
-  spellcheck: false,
-  classes: "govuk-input--width-20",
-  label: {
-    text: "National insurance number"
-  },
-  value: data['nino']
-}) }}
-{% endset -%}
+      {{ govukInput({
+      id: "nino",
+      name: "nino",
+      spellcheck: false,
+      classes: "govuk-input--width-20",
+      label: {
+      text: "National Insurance number"
+      },
+      value: data['nino']
+      }) }}
+      {% endset -%}
 
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
@@ -30,20 +30,20 @@
       name: "matchTRNNino",
       fieldset: {
       legend: {
-      text: "Do you have a National insurance number?",
+      text: "Do you have a National Insurance number?",
       isPageHeading: true,
       classes: "govuk-fieldset__legend--l"
       }
       },
       hint: {
-        text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+      text: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
       },
       items: [
       {
       value: "nino",
       text: "Yes",
       conditional: {
-        html: ninoYes
+      html: ninoYes
       }
       },
       {
@@ -54,12 +54,12 @@
       }) }}
 
       {{ govukButton({
-        text: "Continue"
+      text: "Continue"
       }) }}
 
-      </form>
+</form>
 
-    </div>
-  </div>
+</div>
+</div>
 
 {% endblock %}

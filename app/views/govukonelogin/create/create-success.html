@@ -1,15 +1,9 @@
 {% extends "layouts/govukonelogin.html" %}
 
 {% block pageTitle %}
-{{ serviceName }} – GOV.UK One Login created
+You've created your GOV.UK One Login - {{ serviceName }}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
 
 {% block content %}
 <form class="form" action="/govukonelogin/create/id-verification-flow" method="post">
@@ -22,19 +16,16 @@
       </h1>
 
       <p>
-        You need to verify your identity before you can access your teaching qualifications.
-      </p>
-      <p>
-        You will only need to do this once.
+        Now continue to use the service.
       </p>
 
       {{ govukButton({
-        text: "Continue"
+      text: "Continue"
       }) }}
 
-      </form>
+</form>
 
-    </div>
-  </div>
+</div>
+</div>
 
 {% endblock %}

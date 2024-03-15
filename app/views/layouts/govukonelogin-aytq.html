@@ -16,17 +16,17 @@ serviceName: "Access your teaching qualifications"
 {% block beforeContent %}
 
 {{ govukPhaseBanner({
-    tag: {
-    text: "Prototype",
-    classes: 'govuk-width-container'
-    },
-    html: 'This is not a live service.'
-    }) }}
-    
-    {{ govukBackLink({
-      text: "Back",
-      href: "javascript:window.history.back()"
-    }) }}
+tag: {
+text: "Prototype",
+classes: 'govuk-width-container'
+},
+html: 'This is not a live service.'
+}) }}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
 
 {% endblock %}
 

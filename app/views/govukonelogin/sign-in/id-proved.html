@@ -1,0 +1,88 @@
+<!-- This page is for existing GOV.UK One Login users who have proven their identity in the past. 
+  
+  They'll only see it the first time they sign in to AYTQ. 
+  
+  We're not currently using it in the prototype journeys. -->
+
+{% extends "layouts/govukonelogin.html" %}
+
+{% block pageTitle %}
+You have already proved your identity - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<form class="form" action="/landing-pages/v4/qualifications" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You have already proved your identity
+      </h1>
+
+      <p class="govuk-body">
+        You have already proved your identity with GOV.UK One Login. You would have done this online or in person at the
+        Post Office.
+      </p>
+
+      <p class="govuk-body">
+        You can now continue to the service you need to use.
+      </p>
+
+      <h2 class="govuk-heading-l">
+        Check your details
+      </h2>
+
+      <p class="govuk-body">
+        You submitted the following details when you proved your identity. You might want to check your details are
+        still correct if you've not signed in to GOV.UK One Login in a while.
+      </p>
+
+      <p class="govuk-body">
+        Some of these details might be used to automatically fill in forms within the service you need to use.
+      </p>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['firstName'] + " " + data['lastName'] }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['changeDOB'] or "14 June 1991" }}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+        </div>
+      </dl>
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}
