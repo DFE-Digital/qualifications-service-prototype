@@ -1,0 +1,62 @@
+{% extends "layouts/govukonelogin.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+Create a GOV.UK One Login or sign in - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back to Access your teaching qualifications</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Create a GOV.UK One Login or sign in
+    </h1>
+
+    <p>You'll need:</p>
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+      <li>
+        an email address
+      </li>
+      <li>
+        a way to get security codes - this can be a mobile phone number or an authenticator app
+      </li>
+    </ul>
+
+    {{ govukButton({
+    text: "Create a GOV.UK One Login",
+    href: '/govukonelogin/create/create-email.html'
+    }) }}
+
+    <div>
+      {{ govukButton({
+      text: "Sign in",
+      href: "/govukonelogin/sign-in/sign-in-email",
+      classes: "govuk-button--secondary"
+      }) }}
+    </div>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          About GOV.UK One Login
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>GOV.UK One Login is new. At the moment you can only use your GOV.UK One Login to access some government
+          services.</p>
+        <p>It does not work with all government accounts or services yet (for example Government Gateway or Universal
+          Credit).</p>
+        <p>In the future, you’ll be able to use GOV.UK One Login to access all services on GOV.UK.</p>
+      </div>
+    </details>
+
+  </div>
+</div>
+
+{% endblock %}

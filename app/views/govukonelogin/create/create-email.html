@@ -1,0 +1,43 @@
+{% extends "layouts/govukonelogin.html" %}
+
+{% block pageTitle %}
+Enter your email address - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/govukonelogin/create/create-email-check" method="post">
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+      label: {
+      text: "Enter your email address",
+      classes: "govuk-label--l",
+      value: data['createEmail'],
+      isPageHeading: true
+      },
+      id: "create-email-address",
+      name: "createEmail"
+      }) }}
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

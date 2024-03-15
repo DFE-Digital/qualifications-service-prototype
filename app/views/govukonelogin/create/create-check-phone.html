@@ -1,0 +1,63 @@
+{% extends "layouts/govukonelogin.html" %}
+
+{% block pageTitle %}
+Check your phone - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+<form class="form" action="/govukonelogin/create/create-success" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check your phone
+      </h1>
+
+      <div class="govuk-inset-text">
+        <p>We have sent an code to:</p>
+        <p><strong> {{ data['createMobileNumber'] }} </strong></p>
+      </div>
+
+      <p>
+        It might take a few minutes to arrive. The code will expire after 2 hours.
+      </p>
+      <p>
+        Enter the 6 digit security code.
+      </p>
+      {{ govukInput({
+      classes: "govuk-input--width-10",
+      id: "mobile-security-code",
+      name: "mobileSecurityCode"
+      }) }}
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Problems with the code?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>We can <a href="">send the code again</a> or you can <a href="/govukonelogin/create-success">use a
+              different mobile number</a>.</p>
+          <p><a href="#">Get a code another way</a>.</p>
+        </div>
+      </details>
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}

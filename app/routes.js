@@ -9,6 +9,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Add your routes here
 require('./routes/account-flow')(router)
 require('./routes/user-research')(router)
+require('./routes/govukonelogin')(router)
 
 router.post('/recieved-data', (req, res) => {
     req.session.data['account-data'] = JSON.parse(req.body['account-data'])

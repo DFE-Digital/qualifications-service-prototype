@@ -1,0 +1,120 @@
+{% set detailsTable %}
+
+
+{{ govukSummaryList({
+  classes: 'induction-history',
+  rows: [
+    {
+      key: {
+        text: "Appropriate body"
+      },
+      value: {
+        text: "East London Teaching School Hub"
+      }
+    },
+    {
+      key: {
+        text: "Start date"
+      },
+      value: {
+        text: "1 September 2015"
+      }
+    },
+    {
+      key: {
+        text: "End date"
+      },
+      value: {
+        html: "19 July 2016"
+      }
+    },
+    {
+      key: {
+        text: "Terms"
+      },
+      value: {
+        html: "3"
+      }
+    }
+  ]
+}) }}
+<br>
+{{ govukSummaryList({
+  classes: 'induction-history',
+  rows: [
+    {
+      key: {
+        text: "Appropriate body"
+      },
+      value: {
+        text: "National Teacher Accreditation"
+      }
+    },
+    {
+      key: {
+        text: "Start date"
+      },
+      value: {
+        text: "10 September 2014"
+      }
+    },
+    {
+      key: {
+        text: "End date"
+      },
+      value: {
+        html: "12 July 2015"
+      }
+    },
+    {
+      key: {
+        text: "Terms"
+      },
+      value: {
+        html: "3"
+      }
+    }
+  ]
+}) }}
+
+{% endset -%}
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Induction</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Induction status
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Pass
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date completed
+        </dt>
+        <dd class="govuk-summary-list__value">
+            19 July 2016
+        </dd>
+
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Certificate
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <a download href='/public/images/Induction certificate.pdf'>Download Induction certificate</a>
+        </dd>
+      </div>
+    </dl>
+    <div class="induction-history">
+      {{ govukDetails({
+        summaryText: "Induction history",
+        html: detailsTable
+      }) }}
+    </div>
+  </div>
+</div>

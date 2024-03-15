@@ -1,0 +1,29 @@
+
+  <h3 class="govuk-heading-m ">Your details</h3>
+
+  <ul class="govuk-list govuk-!-font-size-16">
+    <li>
+      Name on certificates
+    </li>
+    <li>
+      <span class="govuk-!-font-weight-bold">{{ user | getShortName }}</span>
+    </li>
+  </ul>
+  <ul class="govuk-list govuk-!-font-size-16">
+    <li>
+      Date of birth
+    </li>
+    <li>
+      <p class="govuk-!-font-weight-bold">14 June 1991 </p>
+    </li>
+  </ul>
+  <ul class="govuk-list govuk-!-font-size-16">
+    <li>
+      Teacher Reference number (TRN)
+    </li>
+    <li>
+      <p class="govuk-!-font-weight-bold">{{ data.user.trn  or 1851018}} </p>
+    </li>
+  </ul>
+
+   <a href='/landing-pages/v4/teacher-record-details'>View and update details</a>

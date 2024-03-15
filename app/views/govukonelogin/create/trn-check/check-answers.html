@@ -1,0 +1,73 @@
+{% extends "layouts/govukonelogin-aytq" %}
+
+{% block pageTitle %}
+Check your answers - {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/govukonelogin/create/trn-check/get-support" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check your answers
+      </h1>
+
+      <p class="govuk-body">Your GOV.UK One Login could not be connected to your teaching record.</p>
+
+      <p class="govuk-body">Check your answers and try again.</p>
+
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+      {{ govukSummaryList({
+      rows: [
+      {
+      key: {
+      text: "National insurance number"
+      },
+      value: {
+      text: data['nino'] or "None"
+      },
+      actions: {
+      items: [
+      {
+      href: "/govukonelogin/create/trn-check/nino",
+      text: "Change",
+      visuallyHiddenText: "nino"
+      }
+      ]
+      }
+      },
+      {
+      key: {
+      text: "Teacher reference number"
+      },
+      value: {
+      text: data['trn'] or "None"
+      },
+      actions: {
+      items: [
+      {
+      href: "/govukonelogin/create/trn-check/trn",
+      text: "Change",
+      visuallyHiddenText: "TRN"
+      }
+      ]
+      }
+      }
+      ]
+      }) }}
+
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}

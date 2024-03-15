@@ -1,0 +1,31 @@
+{% extends "layouts/govukonelogin.html" %}
+
+{% block pageTitle %}
+You've created your GOV.UK One Login - {{ serviceName }}
+{% endblock %}
+
+
+{% block content %}
+<form class="form" action="/govukonelogin/create/id-verification-flow" method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You've created your GOV.UK One Login
+      </h1>
+
+      <p>
+        Now continue to use the service.
+      </p>
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+</form>
+
+</div>
+</div>
+
+{% endblock %}

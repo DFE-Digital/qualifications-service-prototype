@@ -8,7 +8,7 @@ module.exports = {
   email: 'Vi******@gmail.com',
   phone: '078********33',
   dia: 'DfE Identity account',
-  dob: { day: 2, month: 12, year: 1989 },
-  dqtDob: { day: 2, month: 12, year: 1989 }
+  dob: { day: 14, month: 06, year: 1991 },
+  dqtDob: { day: 14, month: 06, year: 1991 }
 
 }

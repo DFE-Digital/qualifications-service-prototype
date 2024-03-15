@@ -14,14 +14,9 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 {%- endif -%}
 {% endset -%}
 
-{% block pageTitle %}
-{{serviceName}} – GOV.UK
-{% endblock %}
-
 {% block header %}
 {{ govukHeader({
 homepageUrl: "#",
-serviceName: serviceName,
 serviceUrl: '/',
 navigation: [
 {

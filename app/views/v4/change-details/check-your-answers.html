@@ -1,0 +1,131 @@
+{% extends "layouts/v4/main.html" %}
+
+{% block pageTitle %}
+{{ serviceName }} – Change your details
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back to change your details",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        {% if data['changeType'] == 'teaching-name' %}
+
+        <form class="form" action="/v4/change-details/success?nameChange=pending" method="post">
+
+            <h1 class="govuk-heading-l">
+                Confirm change
+            </h1>
+
+            {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+            {{ govukSummaryList({
+            rows: [
+            {
+            key: {
+            text: "Name"
+            },
+            value: {
+            text: data['firstName'] + " " + data['middleName'] + " " + data['lastName']
+            },
+            actions: {
+            items: [
+            {
+            href: "/v4/change-details/change-teaching-name",
+            text: "Change",
+            visuallyHiddenText: "name"
+            }
+            ]
+            }
+            },
+            {
+            key: {
+            text: "Evidence"
+            },
+            value: {
+            text: data['idProof']
+            },
+            actions: {
+            items: [
+            {
+            href: "/v4/change-details/change-teaching-name",
+            text: "Change",
+            visuallyHiddenText: "evidence"
+            }
+            ]
+            }
+            }
+            ]
+            }) }}
+
+            {% elseif data['changeType'] == 'dob' %}
+
+            <form class="form" action="/v4/change-details/success?dobChange=pending" method="post">
+
+                <h1 class="govuk-heading-l">
+                    Confirm change
+                </h1>
+
+                {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+                {{ govukSummaryList({
+                rows: [
+                {
+                key: {
+                text: "Date of birth"
+                },
+                value: {
+                text: data| isoDateFromDateInput("changedob") | govukDate
+                },
+                actions: {
+                items: [
+                {
+                href: "/v4/change-details/change-dob",
+                text: "Change",
+                visuallyHiddenText: "name"
+                }
+                ]
+                }
+                },
+                {
+                key: {
+                text: "Evidence"
+                },
+                value: {
+                text: data['idProof']
+                },
+                actions: {
+                items: [
+                {
+                href: "/v4/change-details/change-teaching-name",
+                text: "Change",
+                visuallyHiddenText: "evidence"
+                }
+                ]
+                }
+                }
+                ]
+                }) }}
+
+
+                {% endif %}
+
+                {{ govukButton({
+                text: "Continue"
+                }) }}
+
+            </form>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

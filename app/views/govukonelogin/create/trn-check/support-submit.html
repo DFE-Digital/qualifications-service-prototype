@@ -1,0 +1,38 @@
+{% extends "layouts/govukonelogin-aytq" %}
+
+{% block pageTitle %}
+Support request submitted - {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% from "govuk/components/panel/macro.njk" import govukPanel %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    {{ govukPanel({
+    titleText: "Support request submitted",
+    html: "Your reference number<br><strong>HDJ2123F</strong>"
+    }) }}
+
+    <p class="govuk-body">We've sent you a confirmation email.</p>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p class="govuk-body">
+      We’ve sent your request for support to the Teaching Regulation Agency support team.
+    </p>
+    <p class="govuk-body">
+      They'll contact you to either:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>confirm that you can use GOV.UK One Login to access your teaching qualifications</li>
+      <li>ask for more information</li>
+    </ul>
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

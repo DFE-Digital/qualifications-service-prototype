@@ -1,0 +1,61 @@
+{% extends "layouts/v4/qualifications.html" %}
+{% set title = 'Teaching qualifications' %}
+
+
+
+
+{% set user = data.user %}
+{% if not data.user %}
+{% set user = {firstNames: 'Victoria', lastNames: 'Smith' } %}
+{% endif %}
+
+
+{% set subHeader %}{{user | getShortName}}’s {% endset %}
+{% set signedIn = 'true' %}
+{% set hideButton = 'true' %}
+{% set showSubheader = true %}
+{% set showDetails = true %}
+{% set showDetailsInterstitial = true %}
+
+
+
+
+{% block form %}
+
+
+
+{% if data['mvp'] == 'false' %}
+<!-- npq executive -->
+{% include 'includes/v4/qualifications/_npq-executive.html' %}
+<!-- npw headteacher -->
+{% include 'includes/v4/qualifications/_npq-headteacher.html' %}
+<!-- MQ -->
+{% include 'includes/v4/qualifications/_mq.html' %}
+<!-- Early years -->
+{% include 'includes/v4/qualifications/_eyts.html' %}
+<!-- Induction -->
+{% include 'includes/v4/qualifications/_induction.html' %}
+<!-- QTS -->
+{% include 'includes/v4/qualifications/_qts.html' %}
+<!-- ITT -->
+{% include 'includes/v4/qualifications/_itt.html' %}
+
+{% elseif data['mvp'] == 'true' or data['mvp'] != 'true' %}
+<!-- MQ -->
+{% include 'includes/v4/qualifications/_mq.html' %}
+<!-- Induction -->
+{% include 'includes/v4/qualifications/_induction.html' %}
+<!-- QTS -->
+{% include 'includes/v4/qualifications/_qts.html' %}
+<!-- ITT -->
+{% include 'includes/v4/qualifications/_itt.html' %}
+
+{% elseif data['mvp'] == 'induction' %}
+<!-- Induction -->
+{% include 'includes/v4/qualifications/_induction.html' %}
+<!-- Induction exempt-->
+{% include 'includes/v4/qualifications/_induction-others.html' %}
+{% endif %}
+
+
+{% endblock %}

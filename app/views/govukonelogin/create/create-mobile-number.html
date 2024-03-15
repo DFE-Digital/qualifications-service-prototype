@@ -1,0 +1,78 @@
+{% extends "layouts/govukonelogin.html" %}
+
+{% block pageTitle %}
+Enter your mobile number - {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="/govukonelogin/create/create-check-phone" method="post">
+
+      <h1 class="govuk-heading-l">
+        Enter your mobile number
+      </h1>
+
+      <p>We will send you a 6 digit security code to the number you give us.</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="telephone-number">
+          UK mobile number
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="telephone-number" name="createMobileNumber" type="tel"
+          autocomplete="tel" value="{{ data['createMobileNumber'] }}">
+      </div>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      {% set nonUKHtml %}
+      {{ govukInput({
+      id: "non-UK-mobile-number",
+      name: "nonUKMobile",
+      type: "email",
+      autocomplete: "email",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+      text: "Your mobile number"
+      },
+      hint: {
+      text: "Include the country code, for example +33 for France"
+      }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+      name: "nonUKMobile",
+      items: [
+      {
+      value: "non-UK",
+      text: "I don't have a UK mobile number",
+      conditional: {
+      html: nonUKHtml
+      }
+      }
+      ]
+      }) }}
+
+      {{ govukButton({
+      text: "Continue"
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

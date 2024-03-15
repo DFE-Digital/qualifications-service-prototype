@@ -1,0 +1,39 @@
+{% extends "layouts/govukonelogin-aytq" %}
+
+{% block pageTitle %}
+Connect your teaching record - {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<form class="form" action="/govukonelogin/create/trn-check/nino" method="post">
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-panel app-panel--interruption">
+      <h1 class="govuk-panel__title">
+        Connect your GOV.UK One Login to your teaching record
+      </h1>
+      <div class="govuk-panel__body" style="font-size:24px">
+        You’ve verified your identity for your GOV.UK One Login.
+        <br>
+        <br>
+        You now need to connect it your teaching record. You’ll be asked for your:
+        <br>
+        <br>
+        <ul class="govuk-list govuk-list--bullet" style="font-size:24px">
+          <li>National Insurance number</li>
+          <li>teacher reference number
+          </li>
+          <br>
+      </div>
+      <button class="govuk-button app-button--inverse">
+        Connect to your teaching record
+      </button>
+    </div>
+
+</form>
+
+</div>
+
+{% endblock %}
